@@ -12,9 +12,8 @@ body{
 }
 .nav-item:hover
 {
-    transform: scale(1,3);
     transition-duration: 250ms;
-    transform: scale(1.07,1.07);
+    transform: scale(1.08,1.08);
     transition-timing-function: ease-out;
 }
 h1
