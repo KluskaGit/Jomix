@@ -11,7 +11,7 @@
     <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="jomix-300.png" width="100" height="50"/></a>
+        <a class="navbar-brand" href="index.php"><img src="zdjecia/jomix-300.png" width="100" height="50"/></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -30,25 +30,25 @@
         <div class="me-auto"></div> 
            <ul class="navbar-nav">
             <li class="nav-item" >
-              <a class="nav-link" href="Produkty/Produkty.php">SUKIENKI</a>
+              <a class="nav-link" href="Produkty.php">SUKIENKI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Produkty/Produkty.php">BLUZKI</a>
+              <a class="nav-link" href="Produkty.php">BLUZKI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Produkty/Produkty.php">BLUZY,KARDIGANY</a>
+              <a class="nav-link" href="Produkty.php">BLUZY,KARDIGANY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Produkty/Produkty.php">SPODNIE</a>
+              <a class="nav-link" href="Produkty.php">SPODNIE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Produkty/Produkty.php">SPÓDNICE</a>
+              <a class="nav-link" href="Produkty.php">SPÓDNICE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Produkty/Produkty.php">KOMPLETY</a>
+              <a class="nav-link" href="Produkty.php">KOMPLETY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Koszyk/Koszyk.php"><img src="cart.png" width="30" height="30"></a>
+              <a class="nav-link" href="Koszyk.php"><img src="zdjecia/cart.png" width="30" height="30"></a>
             </li>
             
           </ul>

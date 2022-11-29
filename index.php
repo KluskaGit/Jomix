@@ -40,7 +40,7 @@
             <div class="col" >
               <a href="#">
               <div class="card shadow-sm">
-                  <img src="zakladka.jpg">
+                  <img src="zdjecia/zakladka.jpg">
                   <h4 href="#">Nazwa produktu</h4>
                   <p>Kategoria</p>
                   <h5 href="#">79.99zł</h5>
@@ -52,7 +52,7 @@
             <div class="col">
               <a href="#">
                 <div class="card shadow-sm">
-                    <img src="zakladka.jpg">
+                    <img src="zdjecia/zakladka.jpg">
                     <h4 href="#">Nazwa produktu</h4>
                     <p>Kategoria</p>
                     <h5 href="#">79.99zł</h5>
@@ -64,7 +64,7 @@
             <div class="col">
               <a href="#">
                 <div class="card shadow-sm">
-                    <img src="zakladka.jpg">
+                    <img src="zdjecia/zakladka.jpg">
                     <h4 href="#">Nazwa produktu</h4>
                     <p>Kategoria</p>
                     <h5 href="#">79.99zł</h5>
@@ -76,7 +76,7 @@
             <div class="col">
               <a href="#">
               <div class="card shadow-sm">
-                  <img src="zakladka.jpg">
+                  <img src="zdjecia/zakladka.jpg">
                   <h4 href="#">Nazwa produktu</h4>
                   <p>Kategoria</p>
                   <h5 href="#">79.99zł</h5>
@@ -90,14 +90,14 @@
         </div>
       </div>
       <div class="absolute">
-        <img src="atuty.jpg" class="img-fluid d-none d-lg-block w-100">
+        <img src="zdjecia/atuty.jpg" class="img-fluid d-none d-lg-block w-100">
       </div>
       <div>
-        <img src="atuty_telefon.jpg" class="img-fluid d-lg-none w-100">
+        <img src="zdjecia/atuty_telefony.jpg" class="img-fluid d-lg-none w-100">
       </div>
 
       <div>
-        <img src="baner.jpg" class="img-fluid w-100">
+        <img src="zdjecia/baner.jpg" class="img-fluid w-100">
       </div>
 
       <div class="b-example-divider"></div>
