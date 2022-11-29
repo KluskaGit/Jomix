@@ -8,7 +8,7 @@
               <h1 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">KOMPLETY</h1>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 col ">
                 <div class="col">
-                  <a href="../Produkt/Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php" style="text-decoration: none;">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
                         <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
@@ -21,7 +21,7 @@
                   <br>
                 </div>
                 <div class="col">
-                  <a href="../Produkt/Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php" style="text-decoration: none;">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
                         <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col">
-                  <a href="../Produkt/Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php" style="text-decoration: none;">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
                         <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
@@ -48,7 +48,7 @@
                   <br>
                 </div>
                 <div class="col">
-                  <a href="../Produkt/Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php" style="text-decoration: none;">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
                         <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
@@ -60,7 +60,7 @@
                   </a>
                 </div>
                 <div class="col">
-                  <a href="../Produkt/Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php" style="text-decoration: none;">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
                         <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
@@ -72,7 +72,7 @@
                   </a>
                   </div>
                   <div class="col">
-                    <a href="../Produkt/Produkt.php" style="text-decoration: none;">
+                    <a href="Produkt.php" style="text-decoration: none;">
                       <div class="card shadow-sm">
                           <img src="zdjecia/produkt.jpg">
                           <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
