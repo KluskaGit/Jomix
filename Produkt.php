@@ -1,8 +1,6 @@
 <?php
   include("header.php");
 ?>
-
-
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
@@ -17,8 +15,8 @@
                         </div>
                         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <form action="size" style="margin: 10px; font-size: 16px;">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"/>
+                            <form action="size">
                               <select name="Rozmiar">
                                 <option>S-36</option>
                                 <option>M-38</option>
@@ -116,7 +114,7 @@
       
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Konto</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Twoje konto</a></li>
@@ -126,7 +124,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Informacje</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Regulamin sklepu</a></li>
@@ -137,7 +135,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Kategorie</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzki</a></li>

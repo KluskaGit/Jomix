@@ -1,19 +1,17 @@
 <?php
   include("header.php");
 ?>
-
-
         <div class="album py-5 bg-light">
             <div class="container">
-              <h1 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">KOMPLETY</h1>
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 col ">
+              <h1>KOMPLETY</h1>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 col">
                 <div class="col">
-                  <a href="Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
-                        <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
-                        <p style="text-align:center;">Kategoria</p>
-                        <h5 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">79.99zł</h5>
+                        <h4>Nazwa produktu</h4>
+                        <p>Kategoria</p>
+                        <h5>79.99zł</h5>
                       <div class=""> 
                       </div>
                     </div>
@@ -21,12 +19,12 @@
                   <br>
                 </div>
                 <div class="col">
-                  <a href="Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
-                        <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
-                        <p style="text-align:center;">Kategoria</p>
-                        <h5 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">79.99zł</h5>
+                        <h4>Nazwa produktu</h4>
+                        <p>Kategoria</p>
+                        <h5>79.99zł</h5>
                       <div class=""> 
                       </div>
                     </div>
@@ -35,12 +33,12 @@
                 </div>
 
                 <div class="col">
-                  <a href="Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
-                        <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
-                        <p style="text-align:center;">Kategoria</p>
-                        <h5 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">79.99zł</h5>
+                        <h4>Nazwa produktu</h4>
+                        <p>Kategoria</p>
+                        <h5>79.99zł</h5>
                       <div class=""> 
                       </div>
                     </div>
@@ -48,36 +46,36 @@
                   <br>
                 </div>
                 <div class="col">
-                  <a href="Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
-                        <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
-                        <p style="text-align:center;">Kategoria</p>
-                        <h5 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">79.99zł</h5>
+                        <h4>Nazwa produktu</h4>
+                        <p>Kategoria</p>
+                        <h5>79.99zł</h5>
                       <div class=""> 
                       </div>
                     </div>
                   </a>
                 </div>
                 <div class="col">
-                  <a href="Produkt.php" style="text-decoration: none;">
+                  <a href="Produkt.php">
                     <div class="card shadow-sm">
                         <img src="zdjecia/produkt.jpg">
-                        <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
-                        <p style="text-align:center;">Kategoria</p>
-                        <h5 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">79.99zł</h5>
+                        <h4>Nazwa produktu</h4>
+                        <p>Kategoria</p>
+                        <h5>79.99zł</h5>
                       <div class=""> 
                       </div>
                     </div>
                   </a>
                   </div>
                   <div class="col">
-                    <a href="Produkt.php" style="text-decoration: none;">
+                    <a href="Produkt.php">
                       <div class="card shadow-sm">
                           <img src="zdjecia/produkt.jpg">
-                          <h4 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">Nazwa produktu</h4>
-                          <p style="text-align:center;">Kategoria</p>
-                          <h5 style="text-align:center; color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;">79.99zł</h5>
+                          <h4>Nazwa produktu</h4>
+                          <p>Kategoria</p>
+                          <h5>79.99zł</h5>
                         <div class=""> 
                         </div>
                       </div>
@@ -96,7 +94,7 @@
       
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Konto</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Twoje konto</a></li>
@@ -106,7 +104,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Informacje</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Regulamin sklepu</a></li>
@@ -117,7 +115,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Kategorie</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzki</a></li>

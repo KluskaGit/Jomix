@@ -74,7 +74,7 @@
                         
                       </div>
                       <input type="text" class="form-control" id="username" placeholder="" required>
-                      <div class="invalid-feedback" style="width: 100%;">
+                      <div class="invalid-feedback">
                         Pole jest wymagane.
                       </div>
                     </div>
@@ -228,7 +228,7 @@
       
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Konto</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Twoje konto</a></li>
@@ -238,7 +238,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Informacje</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Regulamin sklepu</a></li>
@@ -249,7 +249,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Kategorie</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzki</a></li>
