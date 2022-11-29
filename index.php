@@ -80,9 +80,7 @@
   </a>
 </div>
 
-    dziala?
     </div>
-
       <br>
       <div class="album py-5 bg-light">
         <div class="container">
