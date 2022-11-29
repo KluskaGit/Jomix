@@ -86,16 +86,9 @@
               </div>
             </div>
           </div>
-      <div class="b-example-divider"></div>
+ 
 
       
         <?php
           include("footer.php");
         ?>
-      
-      
-      <div class="b-example-divider"></div>
-</section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
