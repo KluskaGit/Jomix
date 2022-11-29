@@ -9,6 +9,7 @@
  <title>Jomix</title>
   </head>
   <body>
+    ciało
     <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid">
