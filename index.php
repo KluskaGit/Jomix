@@ -37,9 +37,24 @@
           $ftp_connection = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server");
           ftp_login($ftp_connection, 'f28441_adminjomix', 'ZAQ!2wsx');
           ftp_pasv($ftp_connection, true);
+          
+          $file ="C:/Users/KAMIL/Desktop/jakies zdjecia/keracolor.png";
+          $fp = fopen($file,"r");
+          ftp_fput($ftp_connection, $file, $fp, FTP_ASCII);
+          
+          /*
+          $path="";
+          if(isset($_POST['send']))
+          {
+            $path=$_POST['chooser'];
+            echo $path;
+          }
+          */
+          
         ?>
         <form method="post">
-          <input type="file" accept="image/png, image/jpg">
+          <input type="file" name="chooser" accept="image/png, image/jpg">
+          <input type="submit" name="send" value="wyslij">
         </form>
 
           <h1>NOWOŚCI</h1>
