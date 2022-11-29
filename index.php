@@ -177,7 +177,7 @@
             </ul>
           </div>
       
-          <div class="col" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700";>
+          <div class="col">
             <h4>Kategorie</h4>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzki</a></li>
