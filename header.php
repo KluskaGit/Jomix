@@ -50,6 +50,10 @@
             <li class="nav-item">
               <a class="nav-link" href="Koszyk.php"><img src="zdjecia/cart.png" width="30" height="30"></a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="user.php"><img src="zdjecia/account.png"></a>
+            </li>
             
           </ul>
         </div>
