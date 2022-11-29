@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
 
@@ -30,25 +30,25 @@
         <div class="me-auto"></div> 
            <ul class="navbar-nav">
             <li class="nav-item" >
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Produkty/Produkty.php">SUKIENKI</a>
+              <a class="nav-link" href="Produkty/Produkty.php">SUKIENKI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Produkty/Produkty.php">BLUZKI</a>
+              <a class="nav-link" href="Produkty/Produkty.php">BLUZKI</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Produkty/Produkty.php">BLUZY,KARDIGANY</a>
+              <a class="nav-link" href="Produkty/Produkty.php">BLUZY,KARDIGANY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Produkty/Produkty.php">SPODNIE</a>
+              <a class="nav-link" href="Produkty/Produkty.php">SPODNIE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Produkty/Produkty.php">SPÓDNICE</a>
+              <a class="nav-link" href="Produkty/Produkty.php">SPÓDNICE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Produkty/Produkty.php">KOMPLETY</a>
+              <a class="nav-link" href="Produkty/Produkty.php">KOMPLETY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: #430b4e; font-family: 'Roboto', Lato, 'Roboto Condensed', sans-serif; font-weight: 700;" href="Koszyk/Koszyk.php"><img src="cart.png" width="30" height="30"></a>
+              <a class="nav-link" href="Koszyk/Koszyk.php"><img src="cart.png" width="30" height="30"></a>
             </li>
             </li>
           </ul>
