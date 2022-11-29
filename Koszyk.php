@@ -74,7 +74,7 @@
                         
                       </div>
                       <input type="text" class="form-control" id="username" placeholder="" required>
-                      <div class="invalid-feedback" style="width: 100%;">
+                      <div class="invalid-feedback">
                         Pole jest wymagane.
                       </div>
                     </div>

@@ -1,8 +1,6 @@
 <?php
   include("header.php");
 ?>
-
-
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
@@ -17,8 +15,8 @@
                         </div>
                         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <form action="size" style="margin: 10px; font-size: 16px;">
+                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"/>
+                            <form action="size">
                               <select name="Rozmiar">
                                 <option>S-36</option>
                                 <option>M-38</option>
