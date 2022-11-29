@@ -13,14 +13,22 @@
   {
     display:flex;
     justify-content:center;
-    align-items:center
+    align-items:center;
+    text-align: center;
+    position: relative;
   
+  }
+  .trikolumn
+  {
+    display: flex;
+    flex-direction: row;
   }
 
 </style>
 
 <footer>
-        <div class="row row-cols-3 py-3 my-3">
+    <!--...--> 
+        <div class="trikolumn row-cols-3 py-3 my-3">
           <div class="col">
             <h4>Konto</h4>
             <ul class="nav flex-column">
@@ -49,8 +57,6 @@
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/telephone.png" width=28px height=28px></a></li>
             </ul>
           </div>
-
-
 
         </div>
 
