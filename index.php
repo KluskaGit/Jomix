@@ -45,7 +45,7 @@
           
         ?>
         <form method="post" enctype="multipart/form-data">
-          <input type="file" name="file" id="file">
+          <input type="file" name="file" id="file" accept="image/png, image/gif, image/jpeg, image/webp">
           <input type="submit" name="send" value="upload">
         </form>
 
