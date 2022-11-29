@@ -33,28 +33,20 @@
         <div class="container">
 
         <?php
-          $ftp_server = "jomix.ct8.pl";
-          $ftp_connection = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server");
-          ftp_login($ftp_connection, 'f28441_adminjomix', 'ZAQ!2wsx');
-          ftp_pasv($ftp_connection, true);
-          
-          $file ="C:/Users/KAMIL/Desktop/jakies zdjecia/keracolor.png";
-          $fp = fopen($file,"r");
-          ftp_fput($ftp_connection, $file, $fp, FTP_ASCII);
-          
-          /*
-          $path="";
-          if(isset($_POST['send']))
+        
+          if(isset($_FILES['file']))
           {
-            $path=$_POST['chooser'];
-            echo $path;
+            $file_name=$_FILES['file']['name'];
+            $tmp_name=$_FILES['file']['tmp_name'];
+            $location="zdjecia/";
+            move_uploaded_file($tmp_name,$location.$file_name);
           }
-          */
+          
           
         ?>
-        <form method="post">
-          <input type="file" name="chooser" accept="image/png, image/jpg">
-          <input type="submit" name="send" value="wyslij">
+        <form method="post" enctype="multipart/form-data">
+          <input type="file" name="file" id="file">
+          <input type="submit" name="send" value="upload">
         </form>
 
           <h1>NOWOŚCI</h1>
