@@ -88,11 +88,11 @@
           </div>
       <div class="b-example-divider"></div>
 
-      <div class="container">
+      
         <?php
           include("footer.php");
         ?>
-      </div>
+      
       
       <div class="b-example-divider"></div>
 </section>
