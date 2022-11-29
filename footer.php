@@ -16,6 +16,7 @@
     align-items:center;
     text-align: center;
     position: relative;
+    margin: auto;   
   
   }
   .trikolumn
