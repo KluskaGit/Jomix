@@ -2,12 +2,7 @@
   include("header.php");
 ?>
 
-    <?php
-      $ftp_server = "jomix.ct8.pl";
-      $ftp_connection = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server");
-      ftp_login($ftp_connection, 'f28441_adminjomix', 'ZAQ!2wsx');
-      ftp_pasv($ftp_connection, true);
-    ?>
+    
 
     <div class="container" id="slider">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -36,6 +31,17 @@
       <br>
       <div class="album py-5 bg-light">
         <div class="container">
+
+        <?php
+          $ftp_server = "jomix.ct8.pl";
+          $ftp_connection = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server");
+          ftp_login($ftp_connection, 'f28441_adminjomix', 'ZAQ!2wsx');
+          ftp_pasv($ftp_connection, true);
+        ?>
+        <form method="post">
+          <input type="file" accept="image/png, image/jpg">
+        </form>
+
           <h1>NOWOŚCI</h1>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 col ">
             <div class="col" >
