@@ -4,8 +4,9 @@
 
     <?php
       $ftp_server = "jomix.ct8.pl";
-      $ftp = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server");
-      ftp_login($ftp, 'f28441_adminjomix', 'ZAQ!2wsx');
+      $ftp_connection = ftp_connect($ftp_server) or die("Couldn't connect to $ftp_server");
+      ftp_login($ftp_connection, 'f28441_adminjomix', 'ZAQ!2wsx');
+      ftp_pasv($ftp_connection, true);
     ?>
 
     <div class="container" id="slider">
@@ -102,11 +103,11 @@
 
       <div class="b-example-divider"></div>
 
-      <div class="container">
+      
         <?php
           include("footer.php");
         ?>
-      </div>
+      
       
       <div class="b-example-divider"></div>
 </section>
