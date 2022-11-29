@@ -72,6 +72,6 @@
         </div>
 
           <div class="foocik">
-              © 2022 Jomix - sklep z odzieżą damską.
+              © <?php $data=date("Y"); echo $data?> Jomix - sklep z odzieżą damską.
           </div>
         </footer>
