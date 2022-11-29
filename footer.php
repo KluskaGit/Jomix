@@ -8,6 +8,9 @@
     background-color:gainsboro;
     height:50px;
     width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .row
   {
@@ -69,6 +72,6 @@
         </div>
 
           <div class="foocik">
-              <p>© 2022 Jomix - sklep z odzieżą damską.</p>
+              © 2022 Jomix - sklep z odzieżą damską.
           </div>
         </footer>
