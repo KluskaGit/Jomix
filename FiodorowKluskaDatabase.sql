@@ -1,6 +1,6 @@
-DROP DATABASE If EXISTS jomix;
-CREATE DATABASE jomix;
-use jomix;
+DROP DATABASE If EXISTS m28441_jomix;
+CREATE DATABASE m28441_jomix;
+use m28441_jomix;
 
 
 
