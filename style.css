@@ -16,7 +16,7 @@ body{
     transition-duration: 250ms;
     transform: scale(1.08,1.08);
     transition-timing-function: ease-out;
-    color: red;
+
 }
 h1
 {
@@ -72,6 +72,34 @@ a
 }
 
 
+
+/* HEADER */
+
+.logoheader
+{
+    margin-left: 50px;
+}
+
+.navbar.bg-light
+{
+    background-color: white;
+}
+
+#naglowek
+{
+    margin-right: 50px;
+}
+
+.headerikony
+{
+    margin-left: 40px;
+}
+
+.naglowekheader
+{
+    display: flex;
+    flex-direction: row;
+}
 
 /*  */
 
