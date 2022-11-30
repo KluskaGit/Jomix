@@ -3,6 +3,7 @@
 body{
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
+    
 }
 
 .nav-item
@@ -73,3 +74,14 @@ a
 
 
 /*  */
+
+footer
+{
+    position: relative;
+    bottom: 0px;
+}
+
+.container
+{
+    
+}

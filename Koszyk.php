@@ -4,7 +4,7 @@
 
         <div class="bg-light">
 
-          <div class="container">
+          <div class="main">
             <div class="py-5 text-center">
               <img class="d-block mx-auto mb-4">
               <h2>Koszyk</h2>

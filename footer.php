@@ -36,7 +36,7 @@
   }
 
 </style>
-
+</div>
 <footer>
     <!--...--> 
         <div class="trikolumn row-cols-3 py-3 my-3">

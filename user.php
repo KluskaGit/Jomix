@@ -28,7 +28,7 @@
     border-top: 1px solid rgba(0,0,0,.125);
   }
 </style>
-<div class="container">
+<div class="main">
     <h2 class="user_tk">Twoje Konto</h2>
 
     <div class="row">
