@@ -23,72 +23,34 @@
           </form>
 
           <h1>NOWOŚCI</h1>
+
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 col ">
-            <div class="col" >
-              <a href="#">
-                <div class="card shadow-sm">
-                    <img src="zdjecia/zakladka.jpg">
-                    <h4 href="#">Nazwa produktu</h4>
-                    <p>Kategoria</p>
-                    <h5 href="#">79.99zł</h5>
-                  <div class=""> 
-                  </div>
-                </div>
-              </a>
-            </div>
+
             <div class="col">
               <a href="#">
                 <div class="card shadow-sm">
-                    <img src="zdjecia/zakladka.jpg">
-                    <h4 href="#">Nazwa produktu</h4>
-                    <p>Kategoria</p>
-                    <h5 href="#">79.99zł</h5>
-                  <div class=""> 
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#">
-                <div class="card shadow-sm">
-                    <img src="zdjecia/zakladka.jpg">
-                    <h4 href="#">Nazwa produktu</h4>
-                    <p>Kategoria</p>
-                    <h5 href="#">79.99zł</h5>
-                  <div class=""> 
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="col">
-              <a href="#">
-              <div class="card shadow-sm">
                   <img src="zdjecia/zakladka.jpg">
                   <h4 href="#">Nazwa produktu</h4>
                   <p>Kategoria</p>
                   <h5 href="#">79.99zł</h5>
-                </div> 
-              </a>
                 </div>
-              </div>
+              </a>
             </div>
-            </div>
+
           </div>
+          <br>
+        
+      
+          <div class="absolute">
+            <img src="zdjecia/atuty.jpg" class="img-fluid d-none d-lg-block w-100">
+          </div>
+         
+          <div>
+            <img src="zdjecia/baner.jpg" class="img-fluid w-100">
+          </div>
+
+      
         </div>
-      
-      <div class="absolute">
-        <img src="zdjecia/atuty.jpg" class="img-fluid d-none d-lg-block w-100">
-      </div>
-      <div>
-        <img src="zdjecia/atuty_telefony.jpg" class="img-fluid d-lg-none w-100">
-      </div>
-
-      <div>
-        <img src="zdjecia/baner.jpg" class="img-fluid w-100">
-      </div>
-
-      
-
       
         <?php
           include("footer.php");

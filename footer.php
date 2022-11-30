@@ -37,8 +37,7 @@
 
 </style>
 </div>
-<footer>
-    <!--...--> 
+      <footer>
         <div class="trikolumn row-cols-3 py-3 my-3">
           <div class="col">
             <h4>Konto</h4>
@@ -74,9 +73,10 @@
           <div class="foocik">
               © <?php $data=date("Y"); echo $data?> Jomix - sklep z odzieżą damską.
           </div>
-        </footer>
+      </footer>
+
         <script src="jquery-3.6.0.js"></script>
-<script src="jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
