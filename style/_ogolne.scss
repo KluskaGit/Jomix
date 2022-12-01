@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+body{
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    
+}
+
+.nav-item
+{
+    color: #430b4e;
+    font-weight: 700;
+}
+.nav-item:hover
+{
+    transition-duration: 250ms;
+    transform: scale(1.08,1.08);
+    transition-timing-function: ease-out;
+    
+
+}
+
+.container
+{
+    min-height: 100vh;
+}
+
+.nav-link:hover
+{
+    color: #430b4e !important;
+}
+
+
+h1
+{
+    text-align:center; 
+    color: #430b4e; 
+    font-weight: 700;
+}
+h4
+{
+    text-align:center; 
+    color: #430b4e; 
+    font-weight: 700;
+}
+h5
+{
+    text-align:center; 
+    color: #430b4e; 
+    font-weight: 700;
+}
+p
+{
+    text-align:center;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
