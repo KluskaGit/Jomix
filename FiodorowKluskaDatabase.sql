@@ -95,16 +95,16 @@ ADD CONSTRAINT FOREIGN KEY (userID) REFERENCES uzytkownicy (userID);
 
 
 
-DROP TABLE IF EXISTS rozmiary;
-CREATE TABLE rozmiary
+DROP TABLE IF EXISTS szczegoly_produktu;
+CREATE TABLE szczegoly_produktu
 (
-    rozmiarID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    produktID int(11) NOT NULL,
     nazwa_rozmiaru varchar(11)
 );
 
 
-ALTER TABLE produkty
-ADD CONSTRAINT FOREIGN KEY (rozmiarID) REFERENCES rozmiary (rozmiarID);
+ALTER TABLE szczegoly_produktu
+ADD CONSTRAINT FOREIGN KEY (produktID) REFERENCES produkty (produktID);
 
 
 
