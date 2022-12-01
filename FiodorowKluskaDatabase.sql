@@ -82,7 +82,6 @@ CREATE TABLE produkty
     kategoriaID int(11) NOT NULL,
     nazwa_produktu varchar(55) NOT NULL,
     opis_produktu varchar(300),
-    rozmiarID int(11),
     ilosc int(11) NOT NULL,
     cena float(6) NOT NULL,
     promocja float NOT NULL DEFAULT 0,
