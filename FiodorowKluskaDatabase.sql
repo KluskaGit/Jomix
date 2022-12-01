@@ -152,6 +152,10 @@ ALTER TABLE zamowienia
 ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
 
 
+INSERT INTO uzytkownicy (login, haslo, admin)
+    values ("admin","admin",1);
+
+
 INSERT INTO rozmiary (nazwa_rozmiaru)
     values ("S"),("M"),("L"),("XL");
 
