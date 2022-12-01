@@ -30,7 +30,7 @@
                 </div>
             </form>
             <br>
-            <form action="dodawanie_uzytkownikow.php">
+            <form action="rejestracja.php">
                 <input class="purpleBttn" name="zarejestruj" type="submit" value="Zarejestruj się">
             </form>
 
