@@ -1,5 +1,6 @@
 <?php
-
+include 'head.php'
+/*
 $IMIE = "";
 $NAZWISKO = "";
 $TYTUL = "";
@@ -21,31 +22,20 @@ if (isset($_POST['addButton'])) {
             VALUES ('$IMIE','$NAZWISKO','$TYTUL','$CENA')";
     $stmt = $pdo->exec($sql);
 }
+*/
 ?>
 
 
 
 
 <div class="rejestracja">
-
-    <form method="post">
-        <div class="centruj">
-
-            <div class="dodawanie">
-                <div class="nazwy">
-                    <p>Imie autora</p>
-                    <p>Nazwisko autora</p>
-                    <p>Tytuł</p>
-                    <p>Cena</p>
-                </div>
-                <div class="pola">
-                    <input pattern="[A-Za-z]+" class="poleText" type="text" name="IMIE" required>
-                    <input pattern="[A-Za-z]+" class="poleText" type="text" name="NAZWISKO" required>
-                    <input pattern="[A-Za-z].{1,}" class="poleText" type="text" name="TYTUL" required>
-                    <input step="0.01" class="poleText" type="number" name="CENA" required>
-                </div>
+    <div class="centruj">
+        <form method="post">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Password</label>
+                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
             </div>
-        </div>
-        <input type="submit" class="addButton" name="addButton" value="Dodaj">
-    </form>
+        </form>
+    </div>
+
 </div>
