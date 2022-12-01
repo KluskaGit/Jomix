@@ -150,7 +150,9 @@ INSERT INTO kategorie (nazwa_kategorii)
     values ("Sukienki"),("Bluzki"),("Komplety"),("Spódnice"),("Spodnie");
 
 INSERT INTO produkty (    
-    userID, kategoriaID, nazwa_produktu, opis_produktu, rozmiarID, ilosc, cena, promocja, SKU, img_url)
-    values (1,1,"Sukienka dresowa Tessa musztardowy","Sukienka dresowa Tessa idealnie sprawdzi się w wielu jesiennych stylizacjach. Posiada rozcięcia na bokach, które dodają jej oryginalnego charakteru. Golf w formie komina to doskonała opcja na wietrzne dni, dodatkowo jest świetnym elementem ozdobnym.",);
+    userID, kategoriaID, nazwa_produktu, opis_produktu, ilosc, cena, promocja, SKU, img_url)
+values (1,1,"Sukienka dresowa Tessa musztardowy","Sukienka dresowa Tessa idealnie sprawdzi się w wielu jesiennych stylizacjach. Posiada rozcięcia na bokach, które dodają jej oryginalnego charakteru. Golf w formie komina to doskonała opcja na wietrzne dni, dodatkowo jest świetnym elementem ozdobnym.",10,79.99,0,6873,"zdjecia/Sukienka_dresowa_Tessa_musztardowy.jpg"),
+       (1,1,"Lniana sukienka Emma beżowy","Lniana sukienka  Emma o luźnym kroju w stylu oversize. Sukienka posiada dekolt w kształcie litery V  oraz odcięcie, które daje efekt delikatnej falbany. Wywinięty rękaw nadaje sukience sportowego stylu. Sukienka Emma została wykonana z przewiewnego, lnianego materiału. Idealnie sprawdzi się w wiosennych oraz letnich stylizacjach.",10,99.99,0,2531,"zdjecia/Lniana_sukienka_Emma_beżowy.jpg"),
+       (1,1,"Wiskozowa sukienka Charlotte czerwony","Klasyczna sukienka z rozkloszowaniem, zakładany dekolt w kształcie litery V, rękaw 3/4. Wykonana z wiskozy, dostępna w czterech kolorach. Idealna propozycja na wyjątkowe okazje, jak i na co dzień.",10,89.99,0,3275,"zdjecia/Wiskozowa_sukienka_Charlotte_czerwony.jpg");
 
 
