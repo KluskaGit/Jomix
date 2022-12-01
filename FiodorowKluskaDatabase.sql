@@ -93,17 +93,27 @@ ADD CONSTRAINT FOREIGN KEY (userID) REFERENCES uzytkownicy (userID);
 
 
 
+DROP TABLE IF EXISTS rozmiary;
+CREATE TABLE rozmiary
+(
+    rozmiarID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nazwa_rozmiaru varchar(11)
+);
+
+
 DROP TABLE IF EXISTS szczegoly_produktu;
 CREATE TABLE szczegoly_produktu
 (
     produktID int(11) NOT NULL,
-    nazwa_rozmiaru varchar(11) NOT NULL,
+    rozmiarID varchar(11) NOT NULL,
     ilosc int(11) NOT NULL
 );
 
 
 ALTER TABLE szczegoly_produktu
 ADD CONSTRAINT FOREIGN KEY (produktID) REFERENCES produkty (produktID);
+ALTER TABLE szczegoly_produktu
+ADD CONSTRAINT FOREIGN KEY (rozmiarID) REFERENCES rozmiary (rozmiarID);
 
 
 
@@ -143,7 +153,7 @@ ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
 
 
 INSERT INTO rozmiary (nazwa_rozmiaru)
-    values ("S"),("M"),("L"),("XL"),("XXL");
+    values ("S"),("M"),("L"),("XL");
 
 
 INSERT INTO kategorie (nazwa_kategorii)
@@ -166,6 +176,26 @@ values (1,1,"Sukienka dresowa Tessa musztardowy","Sukienka dresowa Tessa idealni
        (1,4,"Spódnica Caroline liliowy","Bawełniana spódniczka Caroline jest połączeniem lekkiego, sportowego stylu z odrobiną elegancji. Spódnica posiada mini falbankę, która dodaje jej delikatności. Idealnie nadaje się do trampek oraz eleganckich butów, możesz nosić ją tak jak lubisz.",79.99,0,5673,"zdjecia/Spódnica_Caroline_liliowy.jpg"),
        (1,1,"Dopasowana sukienka Mona","Sukienka Mona o dopasowanym kroju. Rękaw 3/4, dekolt typu łódka. Idealnie podkreśli atuty kobiecej sylwetki. Wykonana z najwyższej jakości dzianiny wiskozowej.",79.99,69.99,5596,"zdjecia/Dopasowana_sukienka_Mona.jpg"),
        (1,1,"Sukienka Isabelle z falbaną","Sukienka z odcięciem w pasie i falbaną. Luźny fason nadaje jej lekkiego charakteru. Idealnie tuszuje mankamenty sylwetki. Wykonana z wysokiej jakości dzianiny bawełnianej.",79.99,0,6695,"zdjecia/Sukienka_Isabelle_z_falbaną.jpg");
+
+
+INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc)
+    values
+        (1,1,10),(1,2,10),(1,3,10),(1,4,10),
+        (2,1,10),(2,2,10),(2,3,10),(2,4,10),
+        (3,1,10),(3,2,10),(3,3,10),(3,4,10),
+        (4,1,10),(4,2,10),(4,3,10),(4,4,10),
+        (5,1,10),(5,2,10),(5,3,10),(5,4,10),
+        (6,1,10),(6,2,10),(6,3,10),(6,4,10),
+        (7,1,10),(7,2,10),(7,3,10),(7,4,10),
+        (8,1,10),(8,2,10),(8,3,10),(8,4,10),
+        (9,1,10),(9,2,10),(9,3,10),(9,4,10),
+        (10,1,10),(10,2,10),(10,3,10),(10,4,10),
+        (11,1,10),(11,2,10),(11,3,10),(11,4,10),
+        (12,1,10),(12,2,10),(12,3,10),(12,4,10),
+        (13,1,10),(13,2,10),(13,3,10),(13,4,10),
+        (14,1,10),(14,2,10),(14,3,10),(14,4,10),
+        (15,1,10),(15,2,10),(15,3,10),(15,4,10);
+        
        
        
        
