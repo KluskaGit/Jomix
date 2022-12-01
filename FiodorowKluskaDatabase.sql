@@ -105,7 +105,7 @@ DROP TABLE IF EXISTS szczegoly_produktu;
 CREATE TABLE szczegoly_produktu
 (
     produktID int(11) NOT NULL,
-    rozmiarID varchar(11) NOT NULL,
+    rozmiarID int(11) NOT NULL,
     ilosc int(11) NOT NULL
 );
 
