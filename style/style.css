@@ -54,6 +54,11 @@
   color: white;
 }
 
+.purpleBttn:hover {
+  background-color: #621172;
+  color: white;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   text-decoration: none;
@@ -70,7 +75,7 @@ body {
   transition-timing-function: ease-out;
 }
 
-.container {
+.container-lg {
   min-height: 100vh;
 }
 
