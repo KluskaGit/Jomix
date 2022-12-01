@@ -97,7 +97,7 @@ DROP TABLE IF EXISTS rozmiary;
 CREATE TABLE rozmiary
 (
     rozmiarID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nazwa_rozmiaru varchar(11)
+    nazwa_rozmiaru int(11)
 );
 
 
@@ -105,7 +105,7 @@ DROP TABLE IF EXISTS szczegoly_produktu;
 CREATE TABLE szczegoly_produktu
 (
     produktID int(11) NOT NULL,
-    rozmiarID varchar(11) NOT NULL,
+    rozmiarID int(11) NOT NULL,
     ilosc int(11) NOT NULL
 );
 
