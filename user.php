@@ -1,8 +1,15 @@
-<?php
-include("header.php");
-?>
+<html>
+  <head>
+    <?php include 'head.php'; ?>
+    <title>Produkt</title>
+  </head>
 
-<?php
+  <body>
+    <div class="container-fluid p-0">
+      <?php include 'header.php';?>
+
+      <div class="container-lg">
+      <?php
 $admin = 1;
 $wyswietl_admin = "";
 
@@ -24,7 +31,7 @@ if ($admin == 0) {
     border-top: 1px solid rgba(0, 0, 0, .125);
   }
 </style>
-<div class="main">
+
   <h2 class="user_tk">Twoje Konto</h2>
 
   <div class="row">
@@ -68,7 +75,12 @@ if ($admin == 0) {
     </div>
   </div>
 
-  <?php
-  include("footer.php");
-  ?>
-</div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
+
+
+

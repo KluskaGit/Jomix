@@ -2,7 +2,7 @@
 
 <head>
     <?php include 'head.php'; ?>
-    <title>Produkty</title>
+    <title>Produkt</title>
 </head>
 
 <body>
