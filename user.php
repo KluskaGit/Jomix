@@ -9,6 +9,7 @@
       <?php include 'header.php';?>
 
       <div class="container-lg">
+
       <?php
 $admin = 1;
 $wyswietl_admin = "";
@@ -74,6 +75,7 @@ if ($admin == 0) {
       </div>
     </div>
   </div>
+      
 
       </div>
 
