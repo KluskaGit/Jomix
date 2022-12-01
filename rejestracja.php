@@ -29,29 +29,28 @@ if (isset($_POST['addButton'])) {
 
 
 <div class="container-lg centruj rejestracjamain">
-    <div class="logowanielogo">
+    <div class="logowanielogo rejlogo">
         <img src="zdjecia/jomix-300.png" alt="">
     </div>
-    <div class="rejestracjamain">
-        <form method="post">
-            <div class="col-auto">
-                <label for="inputImie" class="col-form-label">IMIE</label>
-                <input type="text" id="inputImie" class="form-control">
 
-                <label for="inputNazwisko" class="col-form-label">NAZWISKO</label>
-                <input type="text" id="inputNazwisko" class="form-control">
+    <form method="post">
+        <div class="col-auto">
+            <label for="inputImie" class="col-form-label">IMIE</label>
+            <input type="text" id="inputImie" class="form-control">
 
-                <label for="inputEmail" class="col-form-label">EMAIL</label>
-                <input type="text" id="inputEmail" class="form-control">
+            <label for="inputNazwisko" class="col-form-label">NAZWISKO</label>
+            <input type="text" id="inputNazwisko" class="form-control">
 
-                <label for="inputHaslo" class="col-form-label">HASŁO</label>
-                <input type="text" id="inputHaslo" class="form-control">
-            </div>
-            <div class="logowaniebutton">
-                <br>
-                <input class="purpleBttn" type="submit" name="zarejestrujsie" value="Zarejestruj się">
-            </div>
+            <label for="inputEmail" class="col-form-label">EMAIL</label>
+            <input type="text" id="inputEmail" class="form-control">
 
-        </form>
-    </div>
+            <label for="inputHaslo" class="col-form-label">HASŁO</label>
+            <input type="text" id="inputHaslo" class="form-control">
+        </div>
+        <div class="logowaniebutton">
+            <br>
+            <input class="purpleBttn" type="submit" name="zarejestrujsie" value="Zarejestruj się">
+        </div>
+
+    </form>
 </div>

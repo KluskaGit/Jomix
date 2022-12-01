@@ -1,4 +1,10 @@
 .rejestracjamain {
   display: flex;
   flex-direction: column;
+  position: relative;
+  bottom: 90;
+}
+
+.rejlogo {
+  margin-top: 20px;
 }
