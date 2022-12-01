@@ -144,4 +144,9 @@ a {
 .list-group-item-action.active {
   background-color: #430b4e;
   border-color: #430b4e;
+}
+
+.rejestracjamain {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
