@@ -82,7 +82,6 @@ CREATE TABLE produkty
     kategoriaID int(11) NOT NULL,
     nazwa_produktu varchar(55) NOT NULL,
     opis_produktu varchar(300),
-    ilosc int(11) NOT NULL,
     cena float(6) NOT NULL,
     promocja float NOT NULL DEFAULT 0,
     SKU varchar(100) NOT NULL,
@@ -98,7 +97,8 @@ DROP TABLE IF EXISTS szczegoly_produktu;
 CREATE TABLE szczegoly_produktu
 (
     produktID int(11) NOT NULL,
-    nazwa_rozmiaru varchar(11)
+    nazwa_rozmiaru NOT NULL varchar(11),
+    ilosc int(11) NOT NULL
 );
 
 
