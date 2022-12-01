@@ -129,6 +129,12 @@ a {
   line-height: 1.25;
 }
 
+.centruj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .user_tk {
   margin-top: 40px;
   text-align: center;

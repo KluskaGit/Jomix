@@ -20,15 +20,13 @@ if (isset($_POST['addButton'])) {
     $sql = "INSERT INTO ksiazki (imieautora,nazwiskoautora,TYTUL,CENA) 
             VALUES ('$IMIE','$NAZWISKO','$TYTUL','$CENA')";
     $stmt = $pdo->exec($sql);
-    header('Location: user2.php?link=' . $TYTUL . '');
 }
 ?>
 
 
 
 
-<div class="dodajMain">
-
+<div class="rejestracja">
 
     <form method="post">
         <div class="centruj">
