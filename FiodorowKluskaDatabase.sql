@@ -127,3 +127,5 @@ CREATE TABLE Dostawcy
 
 ALTER TABLE zamowienia
 ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
+
+

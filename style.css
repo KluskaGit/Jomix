@@ -16,8 +16,21 @@ body{
     transition-duration: 250ms;
     transform: scale(1.08,1.08);
     transition-timing-function: ease-out;
+    
 
 }
+
+.container
+{
+    min-height: 100vh;
+}
+
+.nav-link:hover
+{
+    color: #430b4e !important;
+}
+
+
 h1
 {
     text-align:center; 
@@ -54,6 +67,8 @@ a
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 .lh-condensed { line-height: 1.25; }
+
+
 
 /* USER PANEL */
 
@@ -134,7 +149,7 @@ a
     text-align: center;
     
 }
-.logbttn
+.purpleBttn
 {
     border-radius: 20px;
     border: none;
@@ -143,4 +158,5 @@ a
     color: white;
 }
 
-/*  */
+/* FOOTER  */
+
