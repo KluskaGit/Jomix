@@ -82,6 +82,7 @@ CREATE TABLE produkty
     kategoriaID int(11) NOT NULL,
     nazwa_produktu varchar(55) NOT NULL,
     opis_produktu varchar(300),
+    rozmiarID int(11),
     ilosc int(11) NOT NULL,
     cena float(6) NOT NULL,
     promocja float NOT NULL DEFAULT 0,
@@ -91,6 +92,19 @@ CREATE TABLE produkty
 
 ALTER TABLE produkty
 ADD CONSTRAINT FOREIGN KEY (userID) REFERENCES uzytkownicy (userID);
+
+
+
+DROP TABLE IF EXISTS rozmiary;
+CREATE TABLE rozmiary
+(
+    rozmiarID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nazwa_rozmiaru varchar(11)
+);
+
+
+ALTER TABLE produkty
+ADD CONSTRAINT FOREIGN KEY (rozmiarID) REFERENCES rozmiary (rozmiarID);
 
 
 
@@ -127,5 +141,17 @@ CREATE TABLE Dostawcy
 
 ALTER TABLE zamowienia
 ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
+
+
+INSERT INTO rozmiary (nazwa_rozmiaru)
+    values ("S"),("M"),("L"),("XL"),("XXL");
+
+
+INSERT INTO kategorie (nazwa_kategorii)
+    values ("Sukienki"),("Bluzki"),("Komplety"),("Spódnice"),("Spodnie");
+
+INSERT INTO produkty (    
+    userID, kategoriaID, nazwa_produktu, opis_produktu, rozmiarID, ilosc, cena, promocja, SKU, img_url)
+    values (1,1,"Sukienka dresowa Tessa musztardowy","Sukienka dresowa Tessa idealnie sprawdzi się w wielu jesiennych stylizacjach. Posiada rozcięcia na bokach, które dodają jej oryginalnego charakteru. Golf w formie komina to doskonała opcja na wietrzne dni, dodatkowo jest świetnym elementem ozdobnym.",);
 
 
