@@ -150,7 +150,7 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  bottom: 90;
+  bottom: 90px;
 }
 
 .rejlogo {
