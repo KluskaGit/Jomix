@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <script src="jquery-3.6.0.js" defer></script>
+    <script src="skrypty/jquery-3.6.0.js" defer></script>
+    <script src="skrypty/skrypt.js" defer></script>
     <script src="jquery.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
 

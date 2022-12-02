@@ -23,7 +23,7 @@
         $hasloLogowanie = $_POST["hasloLogowanie"];
 
 
-        $sprawdzanie_email = mysqli_query($lacz, "SELECT userID, haslo from uzytkownicy where email like '$emailLogowanie' ");
+        $sprawdzanie_email = mysqli_query($lacz, "SELECT userID, haslo from uzytkownicy where email like '$emailLogowanie' or login like '$emailLogowanie'");
         $sprawdzanie = mysqli_fetch_array($sprawdzanie_email);
 
 

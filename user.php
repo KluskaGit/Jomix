@@ -23,7 +23,6 @@
       } else {
         $wyswietl_admin = "flex";
       }
-
       ?>
       <style>
         #list-admin-list {
@@ -48,7 +47,7 @@
             <a class="list-group-item list-group-item-action" id="list-zamowienia-list" data-bs-toggle="list" href="#list-zamowienia" role="tab" aria-controls="list-zamowienia">Zamówienia</a>
             <a class="list-group-item list-group-item-action" id="list-dane-list" data-bs-toggle="list" href="#list-dane" role="tab" aria-controls="list-dane">Twoje Dane</a>
             <a class="list-group-item list-group-item-action" id="list-adresy-list" data-bs-toggle="list" href="#list-adresy" role="tab" aria-controls="list-adresy">Adresy</a>
-            <a class="list-group-item list-group-item-action" id="list-wyloguj-list" data-bs-toggle="list" href="#list-wyloguj" role="tab" aria-controls="list-wyloguj">Wyloguj się</a>
+            <a class="list-group-item list-group-item-action wylogujButton" id="list-wyloguj-list" data-bs-toggle="list" href="#" role="tab" aria-controls="list-wyloguj">Wyloguj się</a>
           </div>
         </div>
         <div class="col-8">
