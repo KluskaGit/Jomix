@@ -1,30 +1,35 @@
 <?php
 include 'laczenieBaza.php';
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-white naglowekheader">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
   <div class="container-fluid">
     <a class="navbar-brand logoheader" href="index.php"><img src="zdjecia/jomix-300.png" width="100" height="50" /></a>
 
-    <div class="wyszukiwarka row">
 
-      <nav class="navbar">
-        <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="zwijanemenu">
+      <nav class="navbar centruj">
+
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
       </nav>
-
     </div>
-  </div>
 
-  <div id="naglowek">
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+
+    <div class="collapse navbar-collapse naglowek" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
         <li class="nav-item">
-          <a class="kolor nav-link" href="Produkty.php">SUKIENKI</a>
+          <a class="nav-link" href="Produkty.php">SUKIENKI</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Produkty.php">BLUZKI</a>

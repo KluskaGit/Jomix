@@ -8,7 +8,7 @@
   background-color: white;
 }
 
-#naglowek {
+.naglowek {
   margin-right: 50px;
 }
 
@@ -16,9 +16,11 @@
   margin-left: 40px;
 }
 
-.naglowekheader {
+.zwijanemenu {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
 }
 
 .logowanieform {

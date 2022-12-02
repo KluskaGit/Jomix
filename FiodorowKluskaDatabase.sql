@@ -12,7 +12,7 @@ CREATE TABLE uzytkownicy
     nazwisko varchar(55),
     login varchar(55),
     haslo varchar(256),
-    admin tinyint(1),
+    admin tinyint NOT NULL DEFAULT 0,
     email varchar(55),
     nr_tel varchar(9),
     kraj varchar(55),
@@ -153,7 +153,7 @@ ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
 
 
 INSERT INTO uzytkownicy (login, haslo, admin)
-    values ("admin","admin",1);
+    values ("admin","ZAQ!2wsx",1);
 
 
 INSERT INTO rozmiary (nazwa_rozmiaru)

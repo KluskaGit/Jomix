@@ -1,25 +1,22 @@
-.logoheader
-{
-    margin-left: 50px;
+.logoheader {
+  margin-left: 50px;
 }
 
-.navbar.bg-light
-{
-    background-color: white;
+.navbar.bg-light {
+  background-color: white;
 }
 
-#naglowek
-{
-    margin-right: 50px;
+.naglowek {
+  margin-right: 50px;
 }
 
-.headerikony
-{
-    margin-left: 40px;
+.headerikony {
+  margin-left: 40px;
 }
 
-.naglowekheader
-{
-    display: flex;
-    flex-direction: row;
+.zwijanemenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
 }

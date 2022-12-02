@@ -28,7 +28,9 @@
         $haslo = password_hash($_POST["haslo"], PASSWORD_ARGON2I);
 
         mysqli_query($lacz, "INSERT INTO uzytkownicy (imie,nazwisko,login,haslo,email) 
-    VALUES ('$imie','$nazwisko','$email','$haslo','$email')");
+        VALUES ('$imie','$nazwisko','$email','$haslo','$email')");
+
+        header("Location: rejestracja.php");
     }
 
     ?>
@@ -50,10 +52,10 @@
                 <input pattern="[A-Za-z]+" type="text" name="nazwisko" id="inputNazwisko" class="form-control" required>
 
                 <label for="inputEmail" class="col-form-label">EMAIL</label>
-                <input type="text" name="email" id="inputEmail" class="form-control" required>
+                <input type="email" name="email" id="inputEmail" class="form-control" required>
 
                 <label for="inputHaslo" class="col-form-label">HASŁO</label>
-                <input type="text" name="haslo" id="inputHaslo" class="form-control" required>
+                <input type="password" name="haslo" id="inputHaslo" class="form-control" required>
             </div>
             <div class="logowaniebutton">
                 <br>
