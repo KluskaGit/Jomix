@@ -12,7 +12,10 @@
     <div class="container-lg">
 
       <?php
-      $admin = 1;
+      $userID = $_SESSION['userID'];
+      $select_user = mysqli_query($lacz, "SELECT * from uzytkownicy where userID=$userID");
+      $czy_admin = mysqli_fetch_array($select_user);
+      $admin = $czy_admin['admin'];
       $wyswietl_admin = "";
 
       if ($admin == 0) {
@@ -35,6 +38,7 @@
       </style>
 
       <h2 class="user_tk">Twoje Konto</h2>
+
 
       <div class="row">
         <div class="col-4">

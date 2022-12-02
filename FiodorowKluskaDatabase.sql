@@ -153,7 +153,7 @@ ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
 
 
 INSERT INTO uzytkownicy (login, haslo, admin)
-    values ("admin","ZAQ!2wsx",1);
+    values ("admin","$argon2i$v=19$m=65536,t=4,p=1$NzF6Y0VmM0tRVDZ1M2VKOQ$8ZrB9DstC3ukZAHUD/QdCExsVLbQYeulcqHVbMAPdRE",1);
 
 
 INSERT INTO rozmiary (nazwa_rozmiaru)

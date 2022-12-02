@@ -2,11 +2,44 @@
 <html lang="pl-PL">
 
 <head>
-    <?php include 'head.php'; ?>
+    <?php
+    include 'head.php';
+    include 'laczenieBaza.php';
+    ?>
     <title>Jomix</title>
 </head>
 
 <body>
+
+    <?php
+
+    $emailLogowanie = "";
+    $hasloLogowanie = "";
+    $bladLogowania = false;
+
+    if (isset($_POST['zaloguj'])) {
+
+        $emailLogowanie = $_POST['emailLogowanie'];
+        $hasloLogowanie = $_POST["hasloLogowanie"];
+
+
+        $sprawdzanie_email = mysqli_query($lacz, "SELECT userID, haslo from uzytkownicy where email like '$emailLogowanie' ");
+        $sprawdzanie = mysqli_fetch_array($sprawdzanie_email);
+
+
+        if ($sprawdzanie != null) {
+            if (password_verify($hasloLogowanie, $sprawdzanie['haslo'])) {
+                session_start();
+                $_SESSION['userID'] = $sprawdzanie['userID'];
+                header("Location: index.php");
+            } else {
+                $bladLogowania = true;
+            }
+        } else {
+            $bladLogowania = true;
+        }
+    }
+    ?>
     <div class="container logowanie">
 
         <div class="logowanielogo">
@@ -20,13 +53,19 @@
             <form method="post">
                 <div class="col">
                     <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input type="text" class="form-control" placeholder="" required>
+                    <input name="emailLogowanie" type="eamil" class="form-control" placeholder="" required>
                     <br>
                     <label for="exampleFormControlInput1" class="form-label">Hasło</label>
-                    <input type="text" class="form-control" placeholder="" required>
+                    <input name="hasloLogowanie" type="password" class="form-control" placeholder="" required>
                 </div>
                 <br>
+                <?php
+                if ($bladLogowania) {
+                    echo "<div class='centruj'><a style='color: red;'>Nie poprawne dane</a></div><br>";
+                }
+                ?>
                 <div class="logowaniebutton">
+
                     <input class="purpleBttn" name="zaloguj" type="submit" value="Zaloguj się">
                 </div>
             </form>

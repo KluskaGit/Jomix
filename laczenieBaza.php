@@ -8,5 +8,7 @@
 
     $lacz = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
+
+
     ?>
 </div>

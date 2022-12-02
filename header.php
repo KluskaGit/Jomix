@@ -1,5 +1,6 @@
 <?php
 include 'laczenieBaza.php';
+session_start();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -52,7 +53,15 @@ include 'laczenieBaza.php';
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="user.php"><img src="zdjecia/account.png"></a>
+          <a class="nav-link" href="
+          <?php
+          if (isset($_SESSION['userID'])) {
+            echo "user.php";
+          } else {
+            echo "logowanie.php";
+          }
+
+          ?>"><img src="zdjecia/account.png"></a>
         </li>
 
       </ul>

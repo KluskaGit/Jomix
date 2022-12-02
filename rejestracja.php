@@ -30,7 +30,7 @@
         mysqli_query($lacz, "INSERT INTO uzytkownicy (imie,nazwisko,login,haslo,email) 
         VALUES ('$imie','$nazwisko','$email','$haslo','$email')");
 
-        header("Location: rejestracja.php");
+        header("Location: logowanie.php");
     }
 
     ?>
