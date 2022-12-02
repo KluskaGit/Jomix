@@ -28,24 +28,20 @@ include 'laczenieBaza.php';
     <div class="collapse navbar-collapse naglowek" id="navbarNavDropdown">
       <ul class="navbar-nav">
 
-        <li class="nav-item">
-          <a class="nav-link" href="Produkty.php">SUKIENKI</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Produkty.php">BLUZKI</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Produkty.php">BLUZY,KARDIGANY</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Produkty.php">SPODNIE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Produkty.php">SPÓDNICE</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Produkty.php">KOMPLETY</a>
-        </li>
+        <?php
+        $wyswietl_kategorie = mysqli_query($lacz, "SELECT kategoriaID, nazwa_kategorii from kategorie");
+
+        while ($jaka_kategoria = @mysqli_fetch_array($wyswietl_kategorie)) {
+          echo '
+              <li class="nav-item">
+                <a class="nav-link" href="Produkty.php?katID=' . $jaka_kategoria['kategoriaID'] . '">' . $jaka_kategoria['nazwa_kategorii'] . '</a>
+              </li>
+          ';
+        }
+        ?>
+
+
+
 
       </ul>
 
