@@ -61,14 +61,11 @@ include 'head.php';
       </ul>
     </div>
 
-    <div class="row">
-      <ul class="nav flex-row media">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png"
-              width=28px height=28px></a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px
-              height=28px></a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/telephone.png"
-              width=28px height=28px></a></li>
+    <div class="flex-row media">
+      <ul class="nav flex-row ">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png" width=28px height=28px></a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px height=28px></a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/telephone.png" width=28px height=28px></a></li>
       </ul>
     </div>
 
