@@ -86,10 +86,14 @@
                 <input type="file" name="file" id="file" accept="image/png, image/gif, image/jpeg, image/webp" required>
             </div>
             <br>
-            <br>
-            <div class="logowaniebutton^">
+            <div class="logowaniebutton">
                 <input type="submit" class="purpleBttn" name="dodajProdukt" value="Dodaj Produkt">
             </div>
+        </form>
+
+        <form action="user.php">
+            <br>
+            <input type="submit" class="purpleBttn" value="Wyjdź">
         </form>
 
 
