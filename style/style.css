@@ -137,6 +137,11 @@ a {
   align-items: center;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .user_tk {
   margin-top: 40px;
   text-align: center;

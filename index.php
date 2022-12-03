@@ -9,19 +9,7 @@
   <div class="container-fluid p-0">
     <?php include("header.php"); ?>
     <div class="container-lg">
-      <?php
-      if (isset($_FILES['file'])) {
-        $file_name = $_FILES['file']['name'];
-        $tmp_name = $_FILES['file']['tmp_name'];
-        $location = "zdjecia/";
-        move_uploaded_file($tmp_name, $location . $file_name);
-      }
-      ?>
 
-      <form method="post" enctype="multipart/form-data">
-        <input type="file" name="file" id="file" accept="image/png, image/gif, image/jpeg, image/webp">
-        <input type="submit" name="send" value="upload">
-      </form>
 
       <h1>NOWOŚCI</h1>
 

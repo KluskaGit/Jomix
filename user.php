@@ -2,7 +2,7 @@
 
 <head>
   <?php include 'head.php'; ?>
-  <title>Produkt</title>
+  <title>Konto</title>
 </head>
 
 <body>
@@ -54,6 +54,11 @@
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show" id="list-admin" role="tabpanel" aria-labelledby="list-admin-list">
 
+              <div class="centruj">
+                <form action="dodawanieproduktu.php">
+                  <input class="purpleBttn" type="submit" value="Dodaj produkt">
+                </form>
+              </div>
 
             </div>
             <div class="tab-pane fade show active" id="list-kokpit" role="tabpanel" aria-labelledby="list-kokpit-list">
