@@ -19,6 +19,7 @@
     $login = "";
     $haslo = "";
     $email = "";
+    $blad_email = false;
 
 
     if (isset($_POST['zarejestrujsie'])) {
@@ -27,10 +28,21 @@
         $email = $_POST["email"];
         $haslo = password_hash($_POST["haslo"], PASSWORD_ARGON2I);
 
-        mysqli_query($lacz, "INSERT INTO uzytkownicy (imie,nazwisko,login,haslo,email) 
-        VALUES ('$imie','$nazwisko','$email','$haslo','$email')");
+        $czy_jest_taki_email = mysqli_query($lacz, "SELECT email from uzytkownicy");
 
-        header("Location: logowanie.php");
+        while ($sprawdzanie_email = mysqli_fetch_array($czy_jest_taki_email)) {
+
+            if ($email == $sprawdzanie_email['email']) {
+                $blad_email = true;
+            }
+        }
+
+        if ($blad_email == false) {
+            mysqli_query($lacz, "INSERT INTO uzytkownicy (imie,nazwisko,login,haslo,email) 
+            VALUES ('$imie','$nazwisko','$email','$haslo','$email')");
+
+            header("Location: logowanie.php");
+        }
     }
 
     ?>
@@ -44,9 +56,9 @@
         </div>
 
         <form method="post">
-            <div class="col-auto">
+            <div class="col">
                 <label for="inputImie" class="col-form-label">IMIE</label>
-                <input pattern="[AĄ-ZŹą-z]+" type="text" name="imie" id="inputImie" class="form-control" required>
+                <input pattern="[A-Za-z]+" type="text" name="imie" id="inputImie" class="form-control" required>
 
                 <label for="inputNazwisko" class="col-form-label">NAZWISKO</label>
                 <input pattern="[A-Za-z]+" type="text" name="nazwisko" id="inputNazwisko" class="form-control" required>
@@ -57,6 +69,11 @@
                 <label for="inputHaslo" class="col-form-label">HASŁO</label>
                 <input type="password" name="haslo" id="inputHaslo" class="form-control" required>
             </div>
+            <?php
+            if ($blad_email) {
+                echo "<div class='centruj '><a style='color: red; '>Konto o tym adresie email już istnieje</a></div>";
+            }
+            ?>
             <div class="logowaniebutton">
                 <br>
                 <input class="purpleBttn" type="submit" name="zarejestrujsie" value="Zarejestruj się">
