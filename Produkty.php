@@ -17,12 +17,12 @@
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 col">
       <?php
-        $produkt = mysqli_query($lacz, "SELECT nazwa_produktu, cena, img_url, nazwa_kategorii from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID  where produkty.kategoriaID=$katID");
+        $produkt = mysqli_query($lacz, "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID  where produkty.kategoriaID=$katID");
 
         while ($row = @mysqli_fetch_array($produkt)){
 
           echo '<div class="col">';
-          echo '<a href="Produkt.php">';
+          echo '<a href="Produkt.php?produktID='.$row['produktID'].'">';
           echo    '<div class="card shadow-sm">';
           echo      '<img src="'.$row['img_url'].'">';
           echo      '<h4>'.$row['nazwa_produktu'].'</h4>';
