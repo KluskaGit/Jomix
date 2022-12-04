@@ -13,7 +13,7 @@
 
       <h1>NOWOŚCI</h1>
       <?php
-      $nowosci = mysqli_query($lacz, "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID ORDER BY produktID DESC LIMIT 4");
+      $nowosci = mysqli_query($lacz, "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii, promocja from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID ORDER BY produktID DESC LIMIT 4");
       ?>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 col ">
         <?php while ($row = @mysqli_fetch_array($nowosci)) {
@@ -23,7 +23,12 @@
           echo      '<img src="' . $row['img_url'] . '">';
           echo      '<h4>' . $row['nazwa_produktu'] . '</h4>';
           echo      '<p>' . $row['nazwa_kategorii'] . '</p>';
-          echo      '<h5>' . $row['cena'] . '</h5>';
+          if ($row['promocja'] > 0) {
+            echo '<h5><s>' . $row['cena'] . '</s></h5>';
+            echo '<h5>' . $row['promocja'] . '</h5>';
+          } else {
+            echo     '<h5>' . $row['cena'] . '</h5>';
+          }
           echo    '</div>';
           echo  '</a>';
           echo '</div>';

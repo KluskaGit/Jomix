@@ -31,7 +31,13 @@
                         <form method="post">
                             <div class="DoKoszyka">
                                 <div>
-                                    Cena: <?php echo $row['cena'] ?>
+                                    Cena: <?php
+                                            if ($row['promocja'] > 0) {
+                                                echo $row['promocja'];
+                                            } else {
+                                                echo $row['cena'];
+                                            }
+                                            ?>
                                 </div>
 
                                 <div>
