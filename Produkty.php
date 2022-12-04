@@ -31,8 +31,7 @@
           echo      '<p>' . $row['nazwa_kategorii'] . '</p>';
 
           if ($row['promocja'] > 0) {
-            echo '<h5><s>' . $row['cena'] . '</s></h5>';
-            echo '<h5>' . $row['promocja'] . '</h5>';
+            echo '<h5><s>' . $row['cena'] . '</s> ' . $row['promocja'] . '</h5>';
           } else {
             echo     '<h5>' . $row['cena'] . '</h5>';
           }
