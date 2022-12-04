@@ -162,4 +162,13 @@ a {
 
 .rejlogo {
   margin-top: 20px;
+}
+
+.produktybox {
+  display: flex;
+  gap: 30px 0px;
+}
+
+.cardpordukt {
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
