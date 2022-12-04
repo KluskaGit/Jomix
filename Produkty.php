@@ -24,7 +24,7 @@
           echo '<div class="col">';
           echo '<a href="Produkt.php">';
           echo    '<div class="card shadow-sm">';
-          echo      '<img src="zdjecia/produkt.jpg">';
+          echo      '<img src="'.$row['img_url'].'">';
           echo      '<h4>'.$row['nazwa_produktu'].'</h4>';
           echo      '<p>'.$row['nazwa_kategorii'].'</p>';
           echo      '<h5>'.$row['cena'].'</h5>';
