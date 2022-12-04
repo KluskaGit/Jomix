@@ -1,6 +1,9 @@
 <?php
 include 'laczenieBaza.php';
 session_start();
+
+$_SESSION['tab_koszyk_produkty'] = array();
+$_SESSION['tab_koszyk_ilosc'] = array();
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">

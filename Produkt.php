@@ -14,6 +14,17 @@
 </head>
 
 <body>
+
+    <?php
+    $szczegoly_produktu_id = "";
+    $rozmiarID = "";
+
+    if (isset($_POST['dodajdokoszyka'])) {
+        $rozmiarID = $_POST['rozmiaryproduktu'];
+        $select_szczegoly = mysqli_query($lacz, "SELECT * from szczegoly_produktu where produktID=$produktID and rozmiarID=$rozmiarID");
+        $szczegoly_array = mysqli_fetch_array($select_szczegoly);
+    }
+    ?>
     <div class="container-fluid p-0">
         <?php include 'header.php'; ?>
         <div class="container-lg">
