@@ -16,18 +16,23 @@
       <h1><?php while ($x = @mysqli_fetch_array($nazwa_kategorii)) { echo $x['nazwa_kategorii']; } ?></h1>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 col">
+      <?php
+        $produkt = mysqli_query($lacz, "SELECT nazwa_produktu, cena, img_url, nazwa_kategorii from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID  where produkty.kategoriaID=$katID");
 
-        <div class="col">
-          <a href="Produkt.php">
-            <div class="card shadow-sm">
-              <img src="zdjecia/produkt.jpg">
-              <h4>Nazwa produktu</h4>
-              <p>Kategoria</p>
-              <h5>79.99zł</h5>
-            </div>
-          </a>
-        </div>
+        while ($row = @mysqli_fetch_array($produkt)){
 
+          echo '<div class="col">';
+          echo '<a href="Produkt.php">';
+          echo    '<div class="card shadow-sm">';
+          echo      '<img src="zdjecia/produkt.jpg">';
+          echo      '<h4>'.$row['nazwa_produktu'].'</h4>';
+          echo      '<p>'.$row['nazwa_kategorii'].'</p>';
+          echo      '<h5>'.$row['cena'].'</h5>';
+          echo    '</div>';
+          echo  '</a>';
+          echo '</div>';
+      }
+      ?>
 
       </div>
     </div>
