@@ -171,4 +171,16 @@ a {
 
 .cardpordukt {
   height: auto;
+}
+
+.zdjecieproduktu {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.DoKoszyka {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }/*# sourceMappingURL=style.css.map */

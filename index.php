@@ -13,7 +13,7 @@
 
       <h1>NOWOŚCI</h1>
       <?php
-      $nowosci = mysqli_query($lacz, "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID LIMIT 4");
+      $nowosci = mysqli_query($lacz, "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID ORDER BY produktID DESC LIMIT 4");
       ?>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 col ">
         <?php while ($row = @mysqli_fetch_array($nowosci)) {
