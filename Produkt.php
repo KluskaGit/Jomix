@@ -35,20 +35,28 @@
                                 </div>
 
                                 <div>
-                                    ilosc:
+                                    ilosc: <input style="text-align: right" type="number" name="ilosc" min="1" value="1">
                                 </div>
 
                                 <div>
                                     <select name="rozmiaryproduktu">
                                         <?php
                                         while ($jakirozmiar = mysqli_fetch_array($rozmiaryilosc)) {
-                                            echo '<optio value=' . $jakirozmiar['rozmiarID'] . '>';
+
+                                            if ($jakirozmiar['ilosc'] > 0) {
+                                                echo '<option value=' . $jakirozmiar['rozmiarID'] . '>' . $jakirozmiar['nazwa_rozmiaru'] . '</option>';
+                                            }
                                         }
                                         ?>
                                     </select>
                                 </div>
 
                                 <input name="dodajdokoszyka" type="submit" value="Dodaj do koszyka" class="btn btn-outline-dark flex-shrink-0">
+                            </div>
+
+                            <div>
+                                Dostępne: <?php //echo  $ileszt 
+                                            ?>
                             </div>
                         </form>
 

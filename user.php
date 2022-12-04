@@ -14,9 +14,12 @@
       <?php
       $userID = $_SESSION['userID'];
       $select_user = mysqli_query($lacz, "SELECT * from uzytkownicy where userID=$userID");
-      $czy_admin = mysqli_fetch_array($select_user);
-      $admin = $czy_admin['admin'];
+      $user_array = mysqli_fetch_array($select_user);
+      $admin = $user_array['admin'];
       $wyswietl_admin = "";
+
+      $imie = $user_array['imie'];
+      $nazwisko = $user_array['nazwisko'];
 
       if ($admin == 0) {
         $wyswietl_admin = "none";
@@ -36,7 +39,8 @@
         }
       </style>
 
-      <h2 class="user_tk">Twoje Konto</h2>
+      <h2 class="user_tk"><?php echo $imie . ' ' . $nazwisko; ?></h2>
+
 
 
       <div class="row">

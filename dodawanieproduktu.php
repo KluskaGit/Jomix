@@ -21,6 +21,8 @@
     $opis_produktu = "";
     $cena = "";
     $SKU = "";
+    $rozmiarID = "";
+    $ilosc_produktu = "";
 
     if (isset($_POST['dodajProdukt'])) {
         $kategoriaID = $_POST['kategoriaID'];
@@ -28,6 +30,11 @@
         $opis_produktu = $_POST['opis_produktu'];
         $cena = $_POST['cena'];
         $SKU = $_POST['SKU'];
+
+        $rozmiarID = $_POST['rozmiarID'];
+        $ilosc_produktu = $_POST['ilosc_produktu'];
+
+
 
         if (isset($_FILES['file'])) {
             $file_name = $_FILES['file']['name'];
@@ -39,6 +46,11 @@
 
         mysqli_query($lacz, "INSERT INTO produkty (userID, kategoriaID, nazwa_produktu, opis_produktu, cena, SKU, img_url) 
         VALUES ($userIDadd, $kategoriaID, '$nazwa_produktu', '$opis_produktu', $cena, '$SKU', 'zdjecia/$file_name')");
+
+        $select_last_id = mysqli_query($lacz, "SELECT * from produkty ORDER BY produktID DESC LIMIT 1");
+        $last_id_array = mysqli_fetch_array($select_last_id);
+
+        mysqli_query($lacz, "INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc) VALUES (" . $last_id_array['produktID'] . ", $rozmiarID, $ilosc_produktu)");
 
         header("Location: dodawanieproduktu.php");
     }
@@ -64,6 +76,24 @@
             <div class="row mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nazwa produktu</label>
                 <input name="nazwa_produktu" type="text" class="form-control" id="exampleFormControlInput1" required>
+            </div>
+
+            <div class="row mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Rozmiar</label>
+                <select name="rozmiarID" class="form-select" aria-label="Default select example">
+                    <?php
+                    $select_rozmiary = mysqli_query($lacz, "SELECT * from rozmiary");
+                    while ($rozmiary_array = @mysqli_fetch_array($select_rozmiary)) {
+
+                        echo '<option value=' . $rozmiary_array['rozmiarID'] . '>' . $rozmiary_array['nazwa_rozmiaru'] . '</option>';
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="row mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Ilość</label>
+                <input name="ilosc_produktu" type="number" min="1" class="form-control" id="exampleFormControlInput1" required>
             </div>
 
             <div class="row">

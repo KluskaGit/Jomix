@@ -66,13 +66,14 @@ CREATE TABLE szczegoly_zamowienia
 (
     szczegoly_zamowieniaID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     zamowienieID int(11) NOT NULL,
-    produktID int(11) NOT NULL,
+    szczegoly_produktuID int(11) NOT NULL,
     ilosc int NOT NULL DEFAULT 1,
     cena float(11)
 );
 
 ALTER TABLE szczegoly_zamowienia
 ADD CONSTRAINT FOREIGN KEY (zamowienieID) REFERENCES zamowienia (zamowienieID);
+
 
 DROP TABLE IF EXISTS produkty;
 CREATE TABLE produkty
@@ -88,8 +89,7 @@ CREATE TABLE produkty
     img_url varchar(256)
 );
 
-ALTER TABLE produkty
-ADD CONSTRAINT FOREIGN KEY (userID) REFERENCES uzytkownicy (userID);
+
 
 
 
@@ -104,11 +104,14 @@ CREATE TABLE rozmiary
 DROP TABLE IF EXISTS szczegoly_produktu;
 CREATE TABLE szczegoly_produktu
 (
+    szczegoly_produktuID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     produktID int(11) NOT NULL,
     rozmiarID int(11) NOT NULL,
     ilosc int(11) NOT NULL
 );
 
+ALTER TABLE szczegoly_zamowienia
+ADD CONSTRAINT FOREIGN KEY (szczegoly_produktuID) REFERENCES szczegoly_produktu (szczegoly_produktuID);
 
 ALTER TABLE szczegoly_produktu
 ADD CONSTRAINT FOREIGN KEY (produktID) REFERENCES produkty (produktID);
@@ -152,8 +155,8 @@ ALTER TABLE zamowienia
 ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
 
 
-INSERT INTO uzytkownicy (login, haslo, admin)
-    values ("admin","$argon2i$v=19$m=65536,t=4,p=1$NzF6Y0VmM0tRVDZ1M2VKOQ$8ZrB9DstC3ukZAHUD/QdCExsVLbQYeulcqHVbMAPdRE",1);
+INSERT INTO uzytkownicy (imie, nazwisko, login, haslo, admin)
+    values ("Admin", "Admin","admin","$argon2i$v=19$m=65536,t=4,p=1$NzF6Y0VmM0tRVDZ1M2VKOQ$8ZrB9DstC3ukZAHUD/QdCExsVLbQYeulcqHVbMAPdRE",1);
 
 
 INSERT INTO rozmiary (nazwa_rozmiaru)
@@ -184,17 +187,17 @@ values (1,1,"Sukienka dresowa Tessa musztardowy","Sukienka dresowa Tessa idealni
 
 INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc)
     values
-        (1,1,10),(1,2,10),(1,3,10),(1,4,10),
-        (2,1,10),(2,2,10),(2,3,10),(2,4,10),
-        (3,1,10),(3,2,10),(3,3,10),(3,4,10),
+        (1,1,9),(1,2,0),(1,3,10),(1,4,10),
+        (2,1,10),(2,2,3),(2,3,10),(2,4,10),
+        (3,1,10),(3,2,10),(3,3,4),(3,4,10),
         (4,1,10),(4,2,10),(4,3,10),(4,4,10),
         (5,1,10),(5,2,10),(5,3,10),(5,4,10),
         (6,1,10),(6,2,10),(6,3,10),(6,4,10),
         (7,1,10),(7,2,10),(7,3,10),(7,4,10),
         (8,1,10),(8,2,10),(8,3,10),(8,4,10),
         (9,1,10),(9,2,10),(9,3,10),(9,4,10),
-        (10,1,10),(10,2,10),(10,3,10),(10,4,10),
-        (11,1,10),(11,2,10),(11,3,10),(11,4,10),
+        (10,1,10),(10,2,10),(10,3,7),(10,4,10),
+        (11,1,10),(11,2,7),(11,3,10),(11,4,10),
         (12,1,10),(12,2,10),(12,3,10),(12,4,10),
         (13,1,10),(13,2,10),(13,3,10),(13,4,10),
         (14,1,10),(14,2,10),(14,3,10),(14,4,10),
