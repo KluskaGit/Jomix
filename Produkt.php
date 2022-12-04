@@ -29,8 +29,8 @@
 
 
                         <form method="post">
-                            <div class="DoKoszyka">
-                                <div>
+                            <div class="DoKoszyka ">
+                                <div class="produktwartosc">
                                     Cena: <?php
                                             if ($row['promocja'] > 0) {
                                                 echo $row['promocja'];
@@ -40,7 +40,7 @@
                                             ?>
                                 </div>
 
-                                <div>
+                                <div class="produktwartosc">
                                     ilosc: <input style="text-align: right" type="number" name="ilosc" min="1" value="1">
                                 </div>
 

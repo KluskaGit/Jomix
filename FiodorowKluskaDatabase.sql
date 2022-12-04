@@ -19,8 +19,8 @@ CREATE TABLE uzytkownicy
     kod_pocztowy varchar(6),
     poczta varchar(55),
     adres1 varchar(55),
-    adres2 varchar(55),
-    koszykID int(11)
+    adres2 varchar(55)
+    
 );
 
 DROP TABLE IF EXISTS koszyk;
@@ -34,8 +34,8 @@ CREATE TABLE koszyk
   
 );
 
-ALTER TABLE uzytkownicy
-ADD CONSTRAINT FOREIGN KEY (koszykID) REFERENCES koszyk (koszykID);
+ALTER TABLE koszyk
+ADD CONSTRAINT FOREIGN KEY (userID) REFERENCES uzytkownicy (userID);
 
 
 DROP TABLE IF EXISTS zamowienia;

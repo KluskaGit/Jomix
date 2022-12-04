@@ -23,6 +23,7 @@
     $SKU = "";
     $rozmiarID = "";
     $ilosc_produktu = "";
+    $blad_sku = false;
 
     if (isset($_POST['dodajProdukt'])) {
         $kategoriaID = $_POST['kategoriaID'];
@@ -36,23 +37,40 @@
 
 
 
-        if (isset($_FILES['file'])) {
-            $file_name = $_FILES['file']['name'];
-            $tmp_name = $_FILES['file']['tmp_name'];
-            $location = "zdjecia/";
-            move_uploaded_file($tmp_name, $location . $file_name);
+
+        $select_produkty = mysqli_query($lacz, "SELECT * from produkty");
+
+
+
+
+        while ($produkty_array = mysqli_fetch_array($select_produkty)) {
+
+            if ($SKU == $produkty_array['SKU']) {
+                $blad_sku = true;
+            }
         }
 
 
-        mysqli_query($lacz, "INSERT INTO produkty (userID, kategoriaID, nazwa_produktu, opis_produktu, cena, SKU, img_url) 
-        VALUES ($userIDadd, $kategoriaID, '$nazwa_produktu', '$opis_produktu', $cena, '$SKU', 'zdjecia/$file_name')");
 
-        $select_last_id = mysqli_query($lacz, "SELECT * from produkty ORDER BY produktID DESC LIMIT 1");
-        $last_id_array = mysqli_fetch_array($select_last_id);
+        if ($blad_sku == false) {
 
-        mysqli_query($lacz, "INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc) VALUES (" . $last_id_array['produktID'] . ", $rozmiarID, $ilosc_produktu)");
+            if (isset($_FILES['file'])) {
+                $file_name = $_FILES['file']['name'];
+                $tmp_name = $_FILES['file']['tmp_name'];
+                $location = "zdjecia/";
+                move_uploaded_file($tmp_name, $location . $file_name);
+            }
 
-        header("Location: dodawanieproduktu.php");
+            mysqli_query($lacz, "INSERT INTO produkty (userID, kategoriaID, nazwa_produktu, opis_produktu, cena, SKU, img_url) 
+            VALUES ($userIDadd, $kategoriaID, '$nazwa_produktu', '$opis_produktu', $cena, '$SKU', 'zdjecia/$file_name')");
+
+            $select_sku = mysqli_query($lacz, "SELECT * from produkty where SKU=$SKU");
+            $sku_array = mysqli_fetch_array($select_sku);
+
+            mysqli_query($lacz, "INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc) VALUES (" . $sku_array['produktID'] . ", $rozmiarID, $ilosc_produktu)");
+
+            header("Location: dodawanieproduktu.php");
+        }
     }
     ?>
 
@@ -109,6 +127,11 @@
             <div class="row mb-3">
                 <label for="exampleFormControlInput1" class="form-label">SKU</label>
                 <input name="SKU" type="number" class="form-control" id="exampleFormControlInput1" required>
+                <?php
+                if ($blad_sku == true) {
+                    echo '<a style="color: red">Produkt o tym SKU już istnieje</a>';
+                }
+                ?>
             </div>
 
             <div class="row mb-3">
