@@ -53,18 +53,23 @@ include 'head.php';
     <div class="col">
       <h4>Kategorie</h4>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzki</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzy</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Komplety</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Spódnice</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Spodnie</a></li>
+        <?php
+        $wyswietl_kategorie = mysqli_query($lacz, "SELECT kategoriaID, nazwa_kategorii from kategorie");
+
+        while ($jaka_kategoria = @mysqli_fetch_array($wyswietl_kategorie)) {
+          echo '
+              <li class="nav-item">
+                <a class="nav-link p-0 text-muted" href="Produkty.php?katID=' . $jaka_kategoria['kategoriaID'] . '">' . $jaka_kategoria['nazwa_kategorii'] . '</a>
+              </li>';
+        }
+        ?>
       </ul>
     </div>
 
     <div class="flex-row media">
       <ul class="nav flex-row ">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png" width=28px height=28px></a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px height=28px></a></li>
+        <li class="nav-item mb-2"><a href="https://www.instagram.com/jomix_pl/" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png" width=28px height=28px></a></li>
+        <li class="nav-item mb-2"><a href="https://www.facebook.com/Jomixx" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px height=28px></a></li>
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/telephone.png" width=28px height=28px></a></li>
       </ul>
     </div>
