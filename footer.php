@@ -30,7 +30,7 @@
   }
 
   .media li {
-    margin: 10px;
+    ma
   }
 </style>
 
@@ -53,11 +53,17 @@ include 'head.php';
     <div class="col">
       <h4>Kategorie</h4>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzki</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bluzy</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Komplety</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Spódnice</a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Spodnie</a></li>
+      <?php
+        $wyswietl_kategorie = mysqli_query($lacz, "SELECT kategoriaID, nazwa_kategorii from kategorie");
+
+        while ($jaka_kategoria = @mysqli_fetch_array($wyswietl_kategorie)) {
+          echo '
+              <li class="nav-item">
+                <a class="nav-link" href="Produkty.php?katID=' . $jaka_kategoria['kategoriaID'] . '">' . $jaka_kategoria['nazwa_kategorii'] . '</a>
+              </li>
+          ';
+        }
+        ?>
       </ul>
     </div>
 
