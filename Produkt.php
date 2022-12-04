@@ -10,7 +10,7 @@
     $rozmiaryilosc = mysqli_query($lacz, "SELECT * from szczegoly_produktu szp inner join rozmiary roz ON szp.rozmiarID=roz.rozmiarID where produktID = $produktID");
     ?>
 
-    <title></title>
+    <title>Produkt</title>
 </head>
 
 <body>

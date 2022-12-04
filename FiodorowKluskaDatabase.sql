@@ -28,7 +28,7 @@ CREATE TABLE koszyk
 (
     koszykID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     userID int(11) NOT NULL,
-    produktID int(11) NOT NULL,
+    szczegoly_produktID int(11) NOT NULL,
     ilosc int NOT NULL DEFAULT 1,
     cena float(11) NOT NULL
   
