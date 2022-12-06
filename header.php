@@ -2,8 +2,7 @@
 include 'laczenieBaza.php';
 session_start();
 
-$_SESSION['tab_koszyk_produkty'] = [];
-$_SESSION['tab_koszyk_ilosc'] = [];
+
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -21,7 +20,7 @@ $_SESSION['tab_koszyk_ilosc'] = [];
 
         <form action="produkty_all.php" class="d-flex" method="post" name="szukanie">
           <input class="form-control me-2" type="text" name="szukanie">
-          <button class="btn btn-outline-success" type="submit">Szukaj</button>
+          <button class="btn btn-outline-success" type="submit" name="szukajbutton">Szukaj</button>
         </form>
       </nav>
     </div>
@@ -34,7 +33,7 @@ $_SESSION['tab_koszyk_ilosc'] = [];
     <div class="collapse navbar-collapse naglowek" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="Produkty.php?katID='0'">Wszystko</a>
+          <a class="nav-link" href="produkty_all.php">Wszystko</a>
         </li>
 
         <?php
