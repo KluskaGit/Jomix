@@ -33,24 +33,21 @@ $_SESSION['tab_koszyk_ilosc'] = [];
 
     <div class="collapse navbar-collapse naglowek" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="Produkty.php?katID='0'">Wszystko</a>
+        </li>
 
         <?php
         $wyswietl_kategorie = mysqli_query(
-            $lacz,
-            'SELECT kategoriaID, nazwa_kategorii from kategorie'
+          $lacz,
+          'SELECT kategoriaID, nazwa_kategorii from kategorie'
         );
 
         while ($jaka_kategoria = @mysqli_fetch_array($wyswietl_kategorie)) {
-            echo '
+          echo '
               <li class="nav-item">
-                <a class="nav-link" href="Produkty.php?katID=' .
-                $jaka_kategoria['kategoriaID'] .
-                '">' .
-                $jaka_kategoria['nazwa_kategorii'] .
-                '</a>
-              </li>
-
-              
+                <a class="nav-link" href="Produkty.php?katID=' . $jaka_kategoria['kategoriaID'] . '">' . $jaka_kategoria['nazwa_kategorii'] . '</a>
+              </li>       
           ';
         }
         ?>
@@ -69,9 +66,9 @@ $_SESSION['tab_koszyk_ilosc'] = [];
         <li class="nav-item">
           <a class="nav-link" href="
           <?php if (isset($_SESSION['userID'])) {
-              echo 'user.php';
+            echo 'user.php';
           } else {
-              echo 'logowanie.php';
+            echo 'logowanie.php';
           } ?>"><img src="zdjecia/account.png"></a>
         </li>
 
