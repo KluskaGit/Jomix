@@ -2,8 +2,8 @@
 include 'laczenieBaza.php';
 session_start();
 
-$_SESSION['tab_koszyk_produkty'] = array();
-$_SESSION['tab_koszyk_ilosc'] = array();
+$_SESSION['tab_koszyk_produkty'] = [];
+$_SESSION['tab_koszyk_ilosc'] = [];
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -19,13 +19,15 @@ $_SESSION['tab_koszyk_ilosc'] = array();
     <div class="zwijanemenu">
       <nav class="navbar centruj">
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form action="produkty_all.php" class="d-flex" method="post" name="szukanie">
+          <input class="form-control me-2" type="text" name="szukanie">
           <button class="btn btn-outline-success" type="submit">Szukaj</button>
         </form>
-
       </nav>
     </div>
+
+
+
 
 
 
@@ -33,13 +35,22 @@ $_SESSION['tab_koszyk_ilosc'] = array();
       <ul class="navbar-nav">
 
         <?php
-        $wyswietl_kategorie = mysqli_query($lacz, "SELECT kategoriaID, nazwa_kategorii from kategorie");
+        $wyswietl_kategorie = mysqli_query(
+            $lacz,
+            'SELECT kategoriaID, nazwa_kategorii from kategorie'
+        );
 
         while ($jaka_kategoria = @mysqli_fetch_array($wyswietl_kategorie)) {
-          echo '
+            echo '
               <li class="nav-item">
-                <a class="nav-link" href="Produkty.php?katID=' . $jaka_kategoria['kategoriaID'] . '">' . $jaka_kategoria['nazwa_kategorii'] . '</a>
+                <a class="nav-link" href="Produkty.php?katID=' .
+                $jaka_kategoria['kategoriaID'] .
+                '">' .
+                $jaka_kategoria['nazwa_kategorii'] .
+                '</a>
               </li>
+
+              
           ';
         }
         ?>
@@ -57,14 +68,11 @@ $_SESSION['tab_koszyk_ilosc'] = array();
 
         <li class="nav-item">
           <a class="nav-link" href="
-          <?php
-          if (isset($_SESSION['userID'])) {
-            echo "user.php";
+          <?php if (isset($_SESSION['userID'])) {
+              echo 'user.php';
           } else {
-            echo "logowanie.php";
-          }
-
-          ?>"><img src="zdjecia/account.png"></a>
+              echo 'logowanie.php';
+          } ?>"><img src="zdjecia/account.png"></a>
         </li>
 
       </ul>
