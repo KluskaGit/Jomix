@@ -12,25 +12,24 @@
     <?php include 'header.php'; ?>
     <div class="container">
       <form method="post">
-        <select class="form-select" aria-label="Sortowanie" name="sort" style="float:right; width:200px" onchange="this.form.submit();">
+        <select class="form-select" aria-label="Sortowanie" name="sort" style=" width:200px" onchange="this.form.submit();">
           <option selected>Sortuj</option>
           <option value="asc">Najniższa cena</option>
           <option value="desc">Najwyższa cena</option>
         </select>
       </form>
       <?php
-      $szukaj_fraza = '';
+      $szukaj_fraza = "";
       if (isset($_POST['szukajbutton'])) {
         $szukaj_fraza = $_POST['szukanie'];
-        if ($szukaj_fraza = !'') {
-          echo '<h1>Wyniki wyszukiwania dla: ' . $szukaj_fraza . '</h1>';
+        if ($szukaj_fraza == "") {
+          echo '<h1>Wszystkie produkty</h1>';      
         } else {
-          echo '<h1>Wszystkie produkty</h1>';
+          echo '<h1>Wyniki wyszukiwania dla: ' . $szukaj_fraza . '</h1>';
         }
       }
-
       ?>
-      <h1>Wszystkie produkty</h1>
+      
     </div>
 
     <div class="container-lg">
@@ -39,9 +38,9 @@
         $sortuj = '';
         $order_by = '';
         $warunek = '';
-        if ($szukaj_fraza = !'') {
+        if ($szukaj_fraza !='') {
           $warunek =
-            "where nazwa_produktu like '%" . $_POST['szukanie'] . "%'";
+            "where nazwa_produktu like '%" . $szukaj_fraza . "%'";
         }
 
         if (isset($_POST['sort'])) {

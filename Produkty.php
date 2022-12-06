@@ -12,7 +12,7 @@
     <?php include 'header.php'; ?>
     <div class="container">
       <form method="post">
-        <select class="form-select" aria-label="Sortowanie" name="sort" style="float:right; width:200px" onchange="this.form.submit();">
+        <select class="form-select" aria-label="Sortowanie" name="sort" style=" width:200px" onchange="this.form.submit();">
           <option selected>Sortuj</option>
           <option value="asc">Najniższa cena</option>
           <option value="desc">Najwyższa cena</option>
