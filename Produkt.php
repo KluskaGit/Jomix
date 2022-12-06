@@ -5,6 +5,7 @@
     include 'head.php';
     include 'laczenieBaza.php';
 
+
     $produktID = $_GET['produktID'];
     $produkt = mysqli_query($lacz, "SELECT nazwa_produktu, opis_produktu, cena, promocja, sku, img_url from produkty where produktID = $produktID");
     $rozmiaryilosc = mysqli_query($lacz, "SELECT * from szczegoly_produktu szp inner join rozmiary roz ON szp.rozmiarID=roz.rozmiarID where produktID = $produktID");
@@ -15,19 +16,39 @@
 
 <body>
 
-    <?php
-    $szczegoly_produktu_id = "";
-    $rozmiarID = "";
 
-    if (isset($_POST['dodajdokoszyka'])) {
-        $rozmiarID = $_POST['rozmiaryproduktu'];
-        $select_szczegoly = mysqli_query($lacz, "SELECT * from szczegoly_produktu where produktID=$produktID and rozmiarID=$rozmiarID");
-        $szczegoly_array = mysqli_fetch_array($select_szczegoly);
-    }
-    ?>
     <div class="container-fluid p-0">
         <?php include 'header.php'; ?>
         <div class="container-lg">
+
+            <?php
+            $szczegoly_produktu_id = "";
+            $rozmiarID = "";
+            $ilosc = "";
+            $cena = "";
+
+            if (isset($_POST['dodajdokoszyka'])) {
+                $rozmiarID = $_POST['rozmiaryproduktu'];
+                $ilosc = $_POST['ilosc'];
+                $produkt_array = mysqli_fetch_array($produkt);
+                if ($produkt_array['promocja'] > 0) {
+                    $cena = $produkt_array['promocja'];
+                } else {
+                    $cena = $produkt_array['cena'];
+                }
+
+                $select_szczegoly = mysqli_query($lacz, "SELECT * from szczegoly_produktu where produktID=$produktID and rozmiarID=$rozmiarID");
+                $szczegoly_array = mysqli_fetch_array($select_szczegoly);
+
+                if (isset($_SESSION['userID'])) {
+                    mysqli_query($lacz, 'INSERT INTO koszyk (userID, szczegoly_produktID, ilosc, cena) values (' . $_SESSION['userID'] . ', ' . $szczegoly_array['szczegoly_produktuID'] . ', ' . $ilosc . ', ' . $cena * $ilosc . ')');
+                    header("Location: Produkt.php?produktID=$produktID");
+                } else {
+                    header("Location: logowanie.php");
+                }
+            }
+            ?>
+
             <?php $row = mysqli_fetch_array($produkt) ?>
             <section class="py-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
@@ -71,10 +92,7 @@
                                 <input name="dodajdokoszyka" type="submit" value="Dodaj do koszyka" class="btn btn-outline-dark flex-shrink-0">
                             </div>
 
-                            <div>
-                                Dostępne: <?php //echo  $ileszt 
-                                            ?>
-                            </div>
+
                         </form>
 
 

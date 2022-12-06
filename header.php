@@ -37,10 +37,7 @@ session_start();
         </li>
 
         <?php
-        $wyswietl_kategorie = mysqli_query(
-          $lacz,
-          'SELECT kategoriaID, nazwa_kategorii from kategorie'
-        );
+        $wyswietl_kategorie = mysqli_query($lacz, 'SELECT kategoriaID, nazwa_kategorii from kategorie');
 
         while ($jaka_kategoria = @mysqli_fetch_array($wyswietl_kategorie)) {
           echo '
@@ -64,11 +61,14 @@ session_start();
 
         <li class="nav-item">
           <a class="nav-link" href="
-          <?php if (isset($_SESSION['userID'])) {
+          <?php
+          if (isset($_SESSION['userID'])) {
             echo 'user.php';
           } else {
             echo 'logowanie.php';
-          } ?>"><img src="zdjecia/account.png"></a>
+          }
+          ?>
+          "><img src="zdjecia/account.png"></a>
         </li>
 
       </ul>
