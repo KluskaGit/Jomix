@@ -16,11 +16,9 @@
 
 <body>
 
-
     <div class="container-fluid p-0">
         <?php include 'header.php'; ?>
         <div class="container-lg">
-
             <?php
             $szczegoly_produktu_id = "";
             $rozmiarID = "";
@@ -45,7 +43,6 @@
                     header("Location: Produkt.php?produktID=$produktID");
                 } else {
                     header("Location: logowanie.php");
-                    
                 }
             }
             ?>
