@@ -45,6 +45,7 @@
                     header("Location: Produkt.php?produktID=$produktID");
                 } else {
                     header("Location: logowanie.php");
+                    
                 }
             }
             ?>
