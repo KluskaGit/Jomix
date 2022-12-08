@@ -25,6 +25,7 @@
             $ilosc = "";
             $cena = "";
 
+
             if (isset($_POST['dodajdokoszyka'])) {
                 $rozmiarID = $_POST['rozmiaryproduktu'];
                 $ilosc = $_POST['ilosc'];
@@ -38,9 +39,18 @@
                 $select_szczegoly = mysqli_query($lacz, "SELECT * from szczegoly_produktu where produktID=$produktID and rozmiarID=$rozmiarID");
                 $szczegoly_array = mysqli_fetch_array($select_szczegoly);
 
+                $select_koszyk_stack = mysqli_query($lacz, 'SELECT * from koszyk where userID=' . $_SESSION['userID'] . ' and szczegoly_produktID=' . $szczegoly_array['szczegoly_produktuID'] . ' ');
+                $koszyk_array_stack = mysqli_fetch_array($select_koszyk_stack);
+
                 if (isset($_SESSION['userID'])) {
-                    mysqli_query($lacz, 'INSERT INTO koszyk (userID, szczegoly_produktID, ilosc, cena) values (' . $_SESSION['userID'] . ', ' . $szczegoly_array['szczegoly_produktuID'] . ', ' . $ilosc . ', ' . $cena * $ilosc . ')');
-                    header("Location: Produkt.php?produktID=$produktID");
+
+                    if ($koszyk_array_stack != null) {
+                        mysqli_query($lacz, 'UPDATE koszyk set ilosc=' . intval($koszyk_array_stack['ilosc'] + $ilosc) . ' where koszykID=' . $koszyk_array_stack['koszykID'] . '');
+                        header("Location: Produkt.php?produktID=$produktID");
+                    } else {
+                        mysqli_query($lacz, 'INSERT INTO koszyk (userID, szczegoly_produktID, ilosc, cena) values (' . $_SESSION['userID'] . ', ' . $szczegoly_array['szczegoly_produktuID'] . ', ' . $ilosc . ', ' . $cena * $ilosc . ')');
+                        header("Location: Produkt.php?produktID=$produktID");
+                    }
                 } else {
                     header("Location: logowanie.php");
                 }

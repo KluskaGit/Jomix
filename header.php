@@ -56,7 +56,15 @@ session_start();
       <ul class="navbar-nav headerikony">
 
         <li class="nav-item">
-          <a class="nav-link" href="Koszyk.php"><img src="zdjecia/cart.png" width="30" height="30"></a>
+          <a class="nav-link" href="
+          <?php
+          if (isset($_SESSION['userID'])) {
+            echo 'Koszyk.php';
+          } else {
+            echo 'logowanie.php';
+          }
+          ?>
+          "><img src="zdjecia/cart.png" width="30" height="30"></a>
         </li>
 
         <li class="nav-item">

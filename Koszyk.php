@@ -10,7 +10,15 @@
     <?php include 'header.php'; ?>
     <div class="container-lg">
 
-
+      <?php
+      $szczegoly_produktID = "";
+      if (isset($_POST['usun_z_koszyka'])) {
+        $szczegoly_produktID = $_POST['szczegoly_produktID'];
+        echo $szczegoly_produktID;
+        mysqli_query($lacz, 'DELETE FROM koszyk where szczegoly_produktID=' . $szczegoly_produktID . ' and userID=' . $_SESSION['userID'] . '');
+        header("Location: Koszyk.php");
+      }
+      ?>
 
 
 
@@ -23,12 +31,13 @@
         <table class="table">
           <thead class="table-dark">
             <tr>
-              <td class="text-center">nr</td>
+              <td class="text-center"></td>
               <td class="text-center">img</td>
               <td class="text-center">Nazwa</td>
               <td class="text-center">Rozmiar</td>
               <td class="text-center">Ilość</td>
               <td class="text-center">Razem</td>
+              <td class="text-center"></td>
             </tr>
           </thead>
           <tbody>
@@ -45,14 +54,16 @@
               $dany_produkt_array = mysqli_fetch_array($select_produkty_koszyk);
 
 
-              echo '<tr class="text-center">' .
+              echo '<form method="post"><tr class="text-center">' .
+                '<input type="hidden" name="szczegoly_produktID" value=' . $koszyk_array['szczegoly_produktID'] . '>' .
                 '<td class="td_item">' . $nr . '</td>' .
                 '<td class="td_item"><img class="koszyk_img" src=' . $dany_produkt_array['img_url'] . '></td>' .
                 '<td class="td_item">' .  $dany_produkt_array['nazwa_produktu'] . '</td>' .
                 '<td class="td_item">' .  $dany_produkt_array['nazwa_rozmiaru'] . '</td>' .
                 '<td class="td_item">' .  $koszyk_array['ilosc'] . '</td>' .
                 '<td class="td_item">' .  $koszyk_array['cena'] . '</td>' .
-                '</tr>';
+                '<td class="td_item"><input type="submit" name="usun_z_koszyka" class="purpleBttn" value="Usuń"></td>' .
+                '</tr></form>';
               $nr += 1;
             }
             ?>
