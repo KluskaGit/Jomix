@@ -72,6 +72,11 @@
         </table>
 
       </div>
+      <div class="do_platnosci">
+        <form action="zamowienie.php">
+          <input class="purpleBttn" type="submit" name="przejdz_do_platnosci" value="Przejdź do płatności">
+        </form>
+      </div>
 
 
     </div>
