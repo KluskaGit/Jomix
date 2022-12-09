@@ -23,13 +23,13 @@
       if (isset($_POST['szukajbutton'])) {
         $szukaj_fraza = $_POST['szukanie'];
         if ($szukaj_fraza == "") {
-          echo '<h1>Wszystkie produkty</h1>';      
+          echo '<h1>Wszystkie produkty</h1>';
         } else {
           echo '<h1>Wyniki wyszukiwania dla: ' . $szukaj_fraza . '</h1>';
         }
       }
       ?>
-      
+
     </div>
 
     <div class="container-lg">
@@ -38,7 +38,7 @@
         $sortuj = '';
         $order_by = '';
         $warunek = '';
-        if ($szukaj_fraza !='') {
+        if ($szukaj_fraza != '') {
           $warunek =
             "where nazwa_produktu like '%" . $szukaj_fraza . "%'";
         }
@@ -53,26 +53,26 @@
         );
 
         while ($row = @mysqli_fetch_array($produkt)) {
-          echo '<div class="col cardpordukt">';
-          echo '<a href="Produkt.php?produktID=' . $row['produktID'] . '">';
-          echo '<div class="card shadow-sm">';
-          echo '<img src="' . $row['img_url'] . '">';
-          echo '<h4>' . $row['nazwa_produktu'] . '</h4>';
-          echo '<p>' . $row['nazwa_kategorii'] . '</p>';
+          $sumuj_ilosc = mysqli_query($lacz, 'SELECT sum(ilosc) as suma_ilosc FROM szczegoly_produktu WHERE produktID=' . $row['produktID'] . '');
+          $sumuj_ilosc_array = mysqli_fetch_array($sumuj_ilosc);
+          if (intval($sumuj_ilosc_array['suma_ilosc']) > 0) {
+            echo '<div class="col cardpordukt">';
+            echo '<a href="Produkt.php?produktID=' . $row['produktID'] . '">';
+            echo '<div class="card shadow-sm">';
+            echo '<img src="' . $row['img_url'] . '">';
+            echo '<h4>' . $row['nazwa_produktu'] . '</h4>';
+            echo '<p>' . $row['nazwa_kategorii'] . '</p>';
 
-          if ($row['promocja'] > 0) {
-            echo '<h5><s>' .
-              $row['cena'] .
-              '</s> ' .
-              $row['promocja'] .
-              '</h5>';
-          } else {
-            echo '<h5>' . $row['cena'] . '</h5>';
+            if ($row['promocja'] > 0) {
+              echo '<h5><s>' . $row['cena'] . '</s> ' . $row['promocja'] . '</h5>';
+            } else {
+              echo '<h5>' . $row['cena'] . '</h5>';
+            }
+
+            echo '</div>';
+            echo '</a>';
+            echo '</div>';
           }
-
-          echo '</div>';
-          echo '</a>';
-          echo '</div>';
         }
         ?>
 

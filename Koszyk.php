@@ -16,6 +16,7 @@
       $pusty = "";
       $pelny = "";
 
+
       if ($czy_pusty_array == null) {
         $pusty = "block";
         $pelny = "none";
@@ -27,7 +28,14 @@
       $szczegoly_produktID = "";
       if (isset($_POST['usun_z_koszyka'])) {
         $szczegoly_produktID = $_POST['szczegoly_produktID'];
-        echo $szczegoly_produktID;
+
+        $select_szczegoly = mysqli_query($lacz, 'SELECT * from szczegoly_produktu where szczegoly_produktuID=' . $szczegoly_produktID . '');
+        $szczegoly_array = mysqli_fetch_array($select_szczegoly);
+
+        $select_koszyk_szczegoly = mysqli_query($lacz, 'SELECT * from koszyk where szczegoly_produktID=' . $szczegoly_produktID . '');
+        $select_koszyk_szczegoly_array = mysqli_fetch_array($select_koszyk_szczegoly);
+
+        mysqli_query($lacz, 'UPDATE szczegoly_produktu set ilosc=' . intval($szczegoly_array['ilosc'] + $select_koszyk_szczegoly_array['ilosc']) . ' where szczegoly_produktuID=' . $szczegoly_produktID . '');
         mysqli_query($lacz, 'DELETE FROM koszyk where szczegoly_produktID=' . $szczegoly_produktID . ' and userID=' . $_SESSION['userID'] . '');
         header("Location: Koszyk.php");
       }

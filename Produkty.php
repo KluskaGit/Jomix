@@ -40,28 +40,30 @@
           $sortuj = $_POST['sort'];
           $order_by = 'order by cena';
         }
-        $produkt = mysqli_query(
-          $lacz,
-          "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii, promocja from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID  where produkty.kategoriaID=$katID $order_by $sortuj"
-        );
+
+        $produkt = mysqli_query($lacz, "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii, promocja from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID  where produkty.kategoriaID=$katID $order_by $sortuj");
 
         while ($row = @mysqli_fetch_array($produkt)) {
-          echo '<div class="col cardpordukt">';
-          echo '<a href="Produkt.php?produktID=' . $row['produktID'] . '">';
-          echo '<div class="card shadow-sm">';
-          echo '<img src="' . $row['img_url'] . '">';
-          echo '<h4>' . $row['nazwa_produktu'] . '</h4>';
-          echo '<p>' . $row['nazwa_kategorii'] . '</p>';
+          $sumuj_ilosc = mysqli_query($lacz, 'SELECT sum(ilosc) as suma_ilosc FROM szczegoly_produktu WHERE produktID=' . $row['produktID'] . '');
+          $sumuj_ilosc_array = mysqli_fetch_array($sumuj_ilosc);
+          if (intval($sumuj_ilosc_array['suma_ilosc']) > 0) {
+            echo '<div class="col cardpordukt">';
+            echo '<a href="Produkt.php?produktID=' . $row['produktID'] . '">';
+            echo '<div class="card shadow-sm">';
+            echo '<img src="' . $row['img_url'] . '">';
+            echo '<h4>' . $row['nazwa_produktu'] . '</h4>';
+            echo '<p>' . $row['nazwa_kategorii'] . '</p>';
 
-          if ($row['promocja'] > 0) {
-            echo '<h5><s>' . $row['cena'] . '</s> ' . $row['promocja'] . '</h5>';
-          } else {
-            echo '<h5>' . $row['cena'] . '</h5>';
+            if ($row['promocja'] > 0) {
+              echo '<h5><s>' . $row['cena'] . '</s> ' . $row['promocja'] . '</h5>';
+            } else {
+              echo '<h5>' . $row['cena'] . '</h5>';
+            }
+
+            echo '</div>';
+            echo '</a>';
+            echo '</div>';
           }
-
-          echo '</div>';
-          echo '</a>';
-          echo '</div>';
         }
         ?>
 

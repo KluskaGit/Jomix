@@ -205,7 +205,7 @@ INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc)
         (15,1,10),(15,2,10),(15,3,10),(15,4,10);
 
 INSERT INTO Dostawcy (nazwa_dostawcy, cena_dostawy)
-    values ("Kurier DHL",15.25),("Kurier DPD",15.11),("Kurier DPD pobranie",25.20), ("Poczta Polska",12.40), ("Paczkomat InPost",10.99);
+    values ("Kurier DHL",15.25),("Kurier DPD",15.11), ("Poczta Polska",12.40), ("Paczkomat InPost",10.99);
 
 INSERT INTO platnosc (metoda_platnosci)
     values ("Przelew tradycyjny"), ("Przelew bankowy"), ("BLIK"), ("Google Pay");
