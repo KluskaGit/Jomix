@@ -43,13 +43,13 @@ CREATE TABLE zamowienia
 (
     zamowienieID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     userID int(11) NOT NULL,
-    status_zamowienia varchar(55) NOT NULL,
+    status_zamowienia tinyint NOT NULL DEFAULT 0,
     kwota_zamowienia float(11) NOT NULL,
     platnoscID int(11) NOT NULL,
     dostawaID int(11) NOT NULL,
-    data_zamowienia DATETIME,
+    data_zamowienia DATE NOT NULL,
     email varchar(55),
-    nr_tel varchar(9),
+    nr_tel varchar(12),
     kraj varchar(55),
     kod_pocztowy varchar(6),
     poczta varchar(55),
@@ -60,6 +60,7 @@ CREATE TABLE zamowienia
 
 ALTER TABLE zamowienia
 ADD CONSTRAINT FOREIGN KEY (userID) REFERENCES uzytkownicy (userID);
+
 
 DROP TABLE IF EXISTS szczegoly_zamowienia;
 CREATE TABLE szczegoly_zamowienia
@@ -135,7 +136,7 @@ DROP TABLE IF EXISTS platnosc;
 CREATE TABLE platnosc
 (
     platnoscID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    metoda_platnosci int(11) NOT NULL
+    metoda_platnosci varchar(55) NOT NULL
 );
 
 ALTER TABLE zamowienia
@@ -202,3 +203,9 @@ INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc)
         (13,1,10),(13,2,10),(13,3,10),(13,4,10),
         (14,1,10),(14,2,10),(14,3,10),(14,4,10),
         (15,1,10),(15,2,10),(15,3,10),(15,4,10);
+
+INSERT INTO Dostawcy (nazwa_dostawcy, cena_dostawy)
+    values ("Kurier DHL",15.25),("Kurier DPD",15.11),("Kurier DPD pobranie",25.20), ("Poczta Polska",12.40), ("Paczkomat InPost",10.99);
+
+INSERT INTO platnosc (metoda_platnosci)
+    values ("Przelew tradycyjny"), ("Przelew bankowy"), ("BLIK"), ("Google Pay");

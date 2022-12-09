@@ -11,6 +11,19 @@
     <div class="container-lg">
 
       <?php
+      $czy_pusty = mysqli_query($lacz, 'SELECT * from koszyk where userID=' . $_SESSION['userID'] . '');
+      $czy_pusty_array = mysqli_fetch_array($czy_pusty);
+      $pusty = "";
+      $pelny = "";
+
+      if ($czy_pusty_array == null) {
+        $pusty = "block";
+        $pelny = "none";
+      } else {
+        $pusty = "none";
+        $pelny = "block";
+      }
+
       $szczegoly_produktID = "";
       if (isset($_POST['usun_z_koszyka'])) {
         $szczegoly_produktID = $_POST['szczegoly_produktID'];
@@ -25,8 +38,10 @@
       <div class="py-5 text-center">
         <h2>Koszyk</h2>
       </div>
-
-      <div class="produkty_w_koszyku">
+      <div class="py-5 text-center" style="display: <?php echo $pusty ?>;">
+        <h2>Twój koszyk jest pusty</h2>
+      </div>
+      <div class="produkty_w_koszyku" style="display: <?php echo $pelny ?>;">
 
         <table class="table">
           <thead class="table-dark">
@@ -61,7 +76,7 @@
                 '<td class="td_item">' .  $dany_produkt_array['nazwa_produktu'] . '</td>' .
                 '<td class="td_item">' .  $dany_produkt_array['nazwa_rozmiaru'] . '</td>' .
                 '<td class="td_item">' .  $koszyk_array['ilosc'] . '</td>' .
-                '<td class="td_item">' .  $koszyk_array['cena'] . '</td>' .
+                '<td class="td_item">' .  $koszyk_array['cena'] . 'zł</td>' .
                 '<td class="td_item"><input type="submit" name="usun_z_koszyka" class="purpleBttn" value="Usuń"></td>' .
                 '</tr></form>';
               $nr += 1;
@@ -70,13 +85,23 @@
 
           </tbody>
         </table>
+        <div class="do_platnosci">
+          <div class="do_zaplaty">
+
+            <?php
+            $suma_cena = mysqli_query($lacz, 'SELECT ROUND(sum(cena*ilosc),2) as suma FROM koszyk WHERE userID=' . $_SESSION['userID'] . '');
+            $suma_cenna_array = mysqli_fetch_array($suma_cena);
+            echo 'Do zapłaty: ' . $suma_cenna_array['suma'] . 'zł';
+            ?>
+          </div>
+          <br>
+          <form action="zamowienie.php">
+            <input class="purpleBttn" type="submit" name="przejdz_do_platnosci" value="Przejdź do płatności">
+          </form>
+        </div>
 
       </div>
-      <div class="do_platnosci">
-        <form action="zamowienie.php">
-          <input class="purpleBttn" type="submit" name="przejdz_do_platnosci" value="Przejdź do płatności">
-        </form>
-      </div>
+
 
 
     </div>
