@@ -17,6 +17,7 @@
       $pelny = "";
 
 
+
       if ($czy_pusty_array == null) {
         $pusty = "block";
         $pelny = "none";
