@@ -9,3 +9,4 @@ if ($array_z_koszyka != null) {
     mysqli_query($lacz, 'DELETE FROM koszyk where userID=' . $_SESSION['userID'] . '');
 }
 header("Location: wylogujsie.php");
+exit();
