@@ -36,7 +36,6 @@
             }
             ?>
             <a class="list-group-item list-group-item-action active" id="list-kokpit-list" data-bs-toggle="list" href="#list-kokpit" role="tab" aria-controls="list-kokpit">Kokpit</a>
-            <a class="list-group-item list-group-item-action" id="list-zamowienia-list" data-bs-toggle="list" href="#list-zamowienia" role="tab" aria-controls="list-zamowienia">Zamówienia</a>
             <a class="list-group-item list-group-item-action" id="list-dane-list" data-bs-toggle="list" href="#list-dane" role="tab" aria-controls="list-dane">Twoje Dane</a>
             <a class="list-group-item list-group-item-action" id="list-adresy-list" data-bs-toggle="list" href="#list-adresy" role="tab" aria-controls="list-adresy">Adresy</a>
             <a class="list-group-item list-group-item-action wylogujButton" id="list-wyloguj-list" data-bs-toggle="list" href="#" role="tab" aria-controls="list-wyloguj">Wyloguj się</a>
@@ -111,12 +110,60 @@
 
               </div>
             </div>
-            <div class="tab-pane fade" id="list-zamowienia" role="tabpanel" aria-labelledby="list-zamowienia-list">
-              Zamówienia</div>
-            <div class="tab-pane fade" id="list-dane" role="tabpanel" aria-labelledby="list-dane-list">
-              <?php
 
-              ?>
+            <div class="tab-pane fade" id="list-dane" role="tabpanel" aria-labelledby="list-dane-list">
+              <div class="d-flex">
+                <?php
+                echo '<h3>Imie: ' . $user_array['imie'] . '</h3>';
+                ?>
+              </div>
+
+              <div class="d-flex">
+                <?php
+                echo '<h3>Nazwisko: ' . $user_array['nazwisko'] . '</h3>';
+                ?>
+              </div>
+
+              <div class="d-flex">
+                <?php
+                echo '<h3>Eamil: ' . $user_array['email'] . '</h3>';
+                ?>
+              </div>
+
+              <br>
+              <div class="d-flex">
+                <button type="button" class="purpleBttn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Edytuj
+                </button>
+              </div>
+
+
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Zmień swoje dane</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form method="post">
+                      <div class="modal-body">
+                        <div class="w-50 mb-3">
+                          <label for="exampleFormControlInput1" class="form-label">Nazwa produktu</label>
+                          <input name="nazwa_produktu" type="text" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
 
             </div>
             <div class="tab-pane fade" id="list-adresy" role="tabpanel" aria-labelledby="list-adresy-list">Adresy</div>

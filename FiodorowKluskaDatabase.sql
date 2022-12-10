@@ -156,8 +156,8 @@ ALTER TABLE zamowienia
 ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
 
 
-INSERT INTO uzytkownicy (imie, nazwisko, login, haslo, admin)
-    values ("Admin", "Admin","admin","$argon2i$v=19$m=65536,t=4,p=1$NzF6Y0VmM0tRVDZ1M2VKOQ$8ZrB9DstC3ukZAHUD/QdCExsVLbQYeulcqHVbMAPdRE",1);
+INSERT INTO uzytkownicy (imie, nazwisko, login, haslo, admin, email)
+    values ("Admin", "Admin","admin","$argon2i$v=19$m=65536,t=4,p=1$NzF6Y0VmM0tRVDZ1M2VKOQ$8ZrB9DstC3ukZAHUD/QdCExsVLbQYeulcqHVbMAPdRE",1, "admin@gmail.com");
 
 
 INSERT INTO rozmiary (nazwa_rozmiaru)

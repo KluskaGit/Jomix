@@ -161,6 +161,10 @@ a {
   text-align: center;
 }
 
+#list-dane {
+  margin-left: 40px;
+}
+
 .rejestracjamain {
   display: flex;
   flex-direction: column;
