@@ -10,12 +10,10 @@ session_start();
     <a class="navbar-brand logoheader" href="index.php"><img src="zdjecia/jomix-300.png" width="100" height="50" /></a>
 
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
 
-    <div class="zwijanemenu">
+
+    <div class="wyszukaj">
       <nav class="navbar centruj">
 
         <form action="produkty_all.php" class="d-flex" method="post" name="szukanie">
@@ -27,11 +25,14 @@ session_start();
 
 
 
-
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
 
     <div class="collapse navbar-collapse naglowek" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+
+      <ul class="navbar-nav col-auto">
         <li class="nav-item">
           <a class="nav-link" href="produkty_all.php">Wszystko</a>
         </li>
@@ -47,16 +48,13 @@ session_start();
           ';
         }
         ?>
-
-
-
-
       </ul>
 
-      <ul class="navbar-nav headerikony">
+      <div class="cart_user">
+        <ul class="navbar-nav headerikony col-auto">
 
-        <li class="nav-item">
-          <a class="nav-link" href="
+          <li class="nav-item">
+            <a class="nav-link" href="
           <?php
           if (isset($_SESSION['userID'])) {
             echo 'Koszyk.php';
@@ -65,10 +63,10 @@ session_start();
           }
           ?>
           "><img src="zdjecia/cart.png" width="30" height="30"></a>
-        </li>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="
+          <li class="nav-item">
+            <a class="nav-link" href="
           <?php
           if (isset($_SESSION['userID'])) {
             echo 'user.php';
@@ -77,10 +75,10 @@ session_start();
           }
           ?>
           "><img src="zdjecia/account.png"></a>
-        </li>
+          </li>
 
-      </ul>
-
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

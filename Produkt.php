@@ -86,7 +86,7 @@
 
                         <form method="post">
                             <div class="DoKoszyka ">
-                                <div class="produktwartosc">
+                                <div class="ok">
                                     Cena: <?php
                                             if ($row['promocja'] > 0) {
                                                 echo $row['promocja'];
@@ -95,12 +95,13 @@
                                             }
                                             ?>
                                 </div>
-
-                                <div class="produktwartosc">
-                                    ilosc: <input style="text-align: right" type="number" name="ilosc" min="1" value="1">
+                                <br>
+                                <div class="ok">
+                                    ilosc: <input class="ilosc_produktu" style="text-align: right" type="number" name="ilosc" min="1" value="1">
                                 </div>
-
-                                <div>
+                                <br>
+                                <div class="ok">
+                                    Rozmiar:
                                     <select name="rozmiaryproduktu">
                                         <?php
                                         while ($jakirozmiar = mysqli_fetch_array($rozmiaryilosc)) {
@@ -112,8 +113,10 @@
                                         ?>
                                     </select>
                                 </div>
-
-                                <input name="dodajdokoszyka" type="submit" value="Dodaj do koszyka" class="btn btn-outline-dark flex-shrink-0">
+                                <br>
+                                <div class="ok">
+                                    <input name="dodajdokoszyka" type="submit" value="Dodaj do koszyka" class="btn btn-outline-dark flex-shrink-0">
+                                </div>
                             </div>
 
 

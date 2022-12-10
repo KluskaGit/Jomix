@@ -8,13 +8,17 @@
 
 .naglowek {
   margin-right: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
 .headerikony {
   margin-left: 40px;
+  position: relative;
+  top: 0;
 }
 
-.zwijanemenu {
+.wyszukaj {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
