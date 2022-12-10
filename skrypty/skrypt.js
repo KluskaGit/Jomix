@@ -3,8 +3,19 @@ $(document).ready(function funkcje() {
     window.open("wylogujsie.php", "_self");
   });
 
-  $("body").on("mousemove", function () {
-    var aktualny_czas = new Date();
-    console.log(aktualny_czas);
+  var timeOutNow = 900000;
+  var timeOutTimer;
+
+  $(window).on("mousemove", function () {
+    clearTimeout(timeOutTimer);
+    afk();
   });
+
+  function afk() {
+    timeOutTimer = setTimeout(auto_logout, timeOutNow);
+  }
+
+  function auto_logout() {
+    window.open("czysc_koszyk.php", "_self");
+  }
 });
