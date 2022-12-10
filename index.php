@@ -17,20 +17,24 @@
       ?>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 col ">
         <?php while ($row = @mysqli_fetch_array($nowosci)) {
-          echo '<div class="col">';
-          echo '<a href="Produkt.php?produktID=' . $row['produktID'] . '">';
-          echo    '<div class="card shadow-sm">';
-          echo      '<img src="' . $row['img_url'] . '">';
-          echo      '<h4>' . $row['nazwa_produktu'] . '</h4>';
-          echo      '<p>' . $row['nazwa_kategorii'] . '</p>';
-          if ($row['promocja'] > 0) {
-            echo '<h5><s>' . $row['cena'] . '</s> ' . $row['promocja'] . '</h5>';
-          } else {
-            echo     '<h5>' . $row['cena'] . '</h5>';
+          $sumuj_ilosc = mysqli_query($lacz, 'SELECT sum(ilosc) as suma_ilosc FROM szczegoly_produktu WHERE produktID=' . $row['produktID'] . '');
+          $sumuj_ilosc_array = mysqli_fetch_array($sumuj_ilosc);
+          if (intval($sumuj_ilosc_array['suma_ilosc']) > 0) {
+            echo '<div class="col">';
+            echo '<a href="Produkt.php?produktID=' . $row['produktID'] . '">';
+            echo    '<div class="card shadow-sm">';
+            echo      '<img src="' . $row['img_url'] . '">';
+            echo      '<h4>' . $row['nazwa_produktu'] . '</h4>';
+            echo      '<p>' . $row['nazwa_kategorii'] . '</p>';
+            if ($row['promocja'] > 0) {
+              echo '<h5><s>' . $row['cena'] . '</s> ' . $row['promocja'] . '</h5>';
+            } else {
+              echo     '<h5>' . $row['cena'] . '</h5>';
+            }
+            echo    '</div>';
+            echo  '</a>';
+            echo '</div>';
           }
-          echo    '</div>';
-          echo  '</a>';
-          echo '</div>';
         } ?>
       </div>
       <br>
