@@ -57,6 +57,11 @@
                             mysqli_query($lacz, 'UPDATE szczegoly_produktu set ilosc=' . intval($szczegoly_array['ilosc'] - $ilosc) . ' where produktID=' . $produktID . ' and rozmiarID=' . $rozmiarID . '');
                             header("Location: Produkt.php?produktID=$produktID");
                         }
+                        $sumuj_ilosc = mysqli_query($lacz, 'SELECT sum(ilosc) as suma_ilosc FROM szczegoly_produktu WHERE produktID=' . $produktID . '');
+                        $sumuj_ilosc_array = mysqli_fetch_array($sumuj_ilosc);
+                        if (intval($sumuj_ilosc_array['suma_ilosc']) == 0) {
+                            header("Location: produkty_all.php");
+                        }
                     } else {
                         $za_duza_ilosc = true;
                     }
