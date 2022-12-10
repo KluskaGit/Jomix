@@ -157,6 +157,10 @@ a {
   border-color: #430b4e;
 }
 
+.user_prawy {
+  text-align: center;
+}
+
 .rejestracjamain {
   display: flex;
   flex-direction: column;

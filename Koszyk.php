@@ -98,7 +98,7 @@
           <div class="do_zaplaty">
 
             <?php
-            $suma_cena = mysqli_query($lacz, 'SELECT ROUND(sum(cena*ilosc),2) as suma FROM koszyk WHERE userID=' . $_SESSION['userID'] . '');
+            $suma_cena = mysqli_query($lacz, 'SELECT ROUND(sum(cena),2) as suma FROM koszyk WHERE userID=' . $_SESSION['userID'] . '');
             $suma_cenna_array = mysqli_fetch_array($suma_cena);
             echo 'Do zapłaty: ' . $suma_cenna_array['suma'] . 'zł';
             ?>

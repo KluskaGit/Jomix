@@ -20,7 +20,7 @@
             $select_platnosc = mysqli_query($lacz, 'SELECT * from platnosc');
             $select_user = mysqli_query($lacz, 'SELECT * from uzytkownicy WHERE userID=' . $_SESSION['userID'] . '');
             $select_koszyk = mysqli_query($lacz, 'SELECT * from koszyk WHERE userID=' . $_SESSION['userID'] . '');
-            $suma_zamowienia = mysqli_query($lacz, 'SELECT ROUND(sum(cena*ilosc),2) as suma FROM koszyk WHERE userID=' . $_SESSION['userID'] . '');
+            $suma_zamowienia = mysqli_query($lacz, 'SELECT ROUND(sum(cena),2) as suma FROM koszyk WHERE userID=' . $_SESSION['userID'] . '');
 
 
             $suma_array = mysqli_fetch_array($suma_zamowienia);

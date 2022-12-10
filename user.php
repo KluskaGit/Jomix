@@ -42,7 +42,7 @@
             <a class="list-group-item list-group-item-action wylogujButton" id="list-wyloguj-list" data-bs-toggle="list" href="#" role="tab" aria-controls="list-wyloguj">Wyloguj się</a>
           </div>
         </div>
-        <div class="col-8">
+        <div class="col-8 user_prawy">
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show" id="list-admin" role="tabpanel" aria-labelledby="list-admin-list">
 
@@ -113,7 +113,12 @@
             </div>
             <div class="tab-pane fade" id="list-zamowienia" role="tabpanel" aria-labelledby="list-zamowienia-list">
               Zamówienia</div>
-            <div class="tab-pane fade" id="list-dane" role="tabpanel" aria-labelledby="list-dane-list">Dane</div>
+            <div class="tab-pane fade" id="list-dane" role="tabpanel" aria-labelledby="list-dane-list">
+              <?php
+
+              ?>
+
+            </div>
             <div class="tab-pane fade" id="list-adresy" role="tabpanel" aria-labelledby="list-adresy-list">Adresy</div>
           </div>
         </div>

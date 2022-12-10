@@ -30,13 +30,9 @@
             if (isset($_POST['dodajdokoszyka'])) {
                 $rozmiarID = $_POST['rozmiaryproduktu'];
                 $ilosc = $_POST['ilosc'];
+                $cena = $_POST['cena'];
                 $produkt2 = mysqli_query($lacz, "SELECT nazwa_produktu, opis_produktu, cena, promocja, sku, img_url from produkty where produktID = $produktID");
                 $produkt_array = mysqli_fetch_array($produkt2);
-                if ($produkt_array['promocja'] > 0) {
-                    $cena = $produkt_array['promocja'];
-                } else {
-                    $cena = $produkt_array['cena'];
-                }
 
 
                 if (isset($_SESSION['userID'])) {
@@ -49,7 +45,7 @@
                     mysqli_begin_transaction($lacz);
                     if (intval($szczegoly_array['ilosc'] - $ilosc) >= 0) {
                         if ($koszyk_array_stack != null) {
-                            mysqli_query($lacz, 'UPDATE koszyk set ilosc=' . intval($koszyk_array_stack['ilosc'] + $ilosc) . ' where koszykID=' . $koszyk_array_stack['koszykID'] . '');
+                            mysqli_query($lacz, 'UPDATE koszyk set ilosc=' . intval($koszyk_array_stack['ilosc'] + $ilosc) . ', cena=cena+' . $cena * $ilosc . ' where koszykID=' . $koszyk_array_stack['koszykID'] . '');
                             mysqli_query($lacz, 'UPDATE szczegoly_produktu set ilosc=' . intval($szczegoly_array['ilosc'] - $ilosc) . ' where produktID=' . $produktID . ' and rozmiarID=' . $rozmiarID . '');
                             header("Location: Produkt.php?produktID=$produktID");
                         } else {
@@ -90,8 +86,10 @@
                                     Cena: <?php
                                             if ($row['promocja'] > 0) {
                                                 echo $row['promocja'];
+                                                echo '<input name="cena" type="hidden" value=' . $row['promocja'] . '>';
                                             } else {
                                                 echo $row['cena'];
+                                                echo '<input name="cena" type="hidden" value=' . $row['cena'] . '>';
                                             }
                                             ?>
                                 </div>
