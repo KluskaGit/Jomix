@@ -12,6 +12,30 @@
     <div class="container-lg">
 
       <?php
+      //wszystkie produkty
+      $wszystkie_produkty = mysqli_query($lacz, 'SELECT szczegoly_produktu.szczegoly_produktuID as sz_ID, szczegoly_produktu.produktID as pID, nazwa_kategorii, nazwa_produktu, nazwa_rozmiaru, ilosc from ((szczegoly_produktu 
+      INNER JOIN rozmiary on szczegoly_produktu.rozmiarID=rozmiary.rozmiarID)
+      INNER JOIN produkty on szczegoly_produktu.produktID=produkty.produktID) 
+      INNER JOIN kategorie on produkty.kategoriaID=kategorie.kategoriaID order by nazwa_kategorii, szczegoly_produktu.produktID');
+      //Usuwanie produktow
+
+      $delete_id = "";
+      if (isset($_POST['usun_dany_produkt'])) {
+        $delete_id = $_POST['zaznacz_produkt'];
+
+        if ($delete_id != null) {
+
+          for ($i = 0; $i < count($delete_id); $i++) {
+            mysqli_query($lacz, 'DELETE from szczegoly_produktu where szczegoly_produktuID=' . $delete_id[$i] . '');
+          }
+          header('Location: user.php');
+        } else {
+          header('Location: user.php');
+        }
+      }
+
+
+      //Edycja danych osobowych
       $userID = $_SESSION['userID'];
       $select_user = mysqli_query($lacz, "SELECT * from uzytkownicy where userID=$userID");
       $user_array = mysqli_fetch_array($select_user);
@@ -20,7 +44,6 @@
 
       $imie = $user_array['imie'];
       $nazwisko = $user_array['nazwisko'];
-
 
       $imie_dane = "";
       $nazwisko_dane = "";
@@ -71,6 +94,40 @@
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show" id="list-admin" role="tabpanel" aria-labelledby="list-admin-list">
               <!-- Admin -->
+              <form method="post">
+                <div class="lista_produktow">
+                  <table class="table">
+                    <thead class="table-dark">
+                      <tr>
+                        <td class="text-center"></td>
+                        <td class="text-center">ID</td>
+                        <td class="text-center">Kategoria</td>
+                        <td class="text-center">Nazwa</td>
+                        <td class="text-center">Rozmiar</td>
+                        <td class="text-center">Ilość</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      while ($wszystkie_produkty_array = mysqli_fetch_array($wszystkie_produkty)) {
+                        echo
+                        '<tr class="text-center">' .
+                          '<td class="td_item"><input type="checkbox" name="zaznacz_produkt[]" value=' . $wszystkie_produkty_array['sz_ID'] . '></td>' .
+                          '<td class="td_item">' . $wszystkie_produkty_array['pID'] . '</td>' .
+                          '<td class="td_item">' . $wszystkie_produkty_array['nazwa_kategorii'] . '</td>' .
+                          '<td class="td_item">' . $wszystkie_produkty_array['nazwa_produktu'] . '</td>' .
+                          '<td class="td_item">' . $wszystkie_produkty_array['nazwa_rozmiaru'] . '</td>' .
+                          '<td class="td_item">' . $wszystkie_produkty_array['ilosc'] . '</td>' .
+                          '</tr>';
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
+                <input type="submit" name="usun_dany_produkt" value="Usuń" class="purpleBttn">
+              </form>
+
+
               <div class="centruj admin_panel">
                 <form action="dodawanieproduktu.php">
                   <input class="purpleBttn" type="submit" value="Dodaj produkt">

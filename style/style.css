@@ -203,6 +203,11 @@ a {
   background-color: #621172;
 }
 
+.lista_produktow {
+  height: 400px;
+  overflow: scroll;
+}
+
 .rejestracjamain {
   display: flex;
   flex-direction: column;
