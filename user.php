@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl-PL">
 
 <head>
   <?php include 'head.php'; ?>
@@ -212,7 +213,30 @@
 
 
             </div>
-            <div class="tab-pane fade" id="list-zamowienia" role="tabpanel" aria-labelledby="list-zamowienia-list">Zamówienia</div>
+
+            <!--Zamowienia-->
+
+            <div class="tab-pane fade" id="list-zamowienia" role="tabpanel" aria-labelledby="list-zamowienia-list">
+
+              <div class="zamowienia_do_realizacji">
+                <p>
+                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Link with href
+                  </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Button with data-bs-target
+                  </button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!--Kokpit-->
             <div class="tab-pane fade show active" id="list-kokpit" role="tabpanel" aria-labelledby="list-kokpit-list">
               <div class="kokpit">
                 <a>Tutaj, możesz zarządzać swoimi zamówieniami oraz ustawieniami konta.</a>
