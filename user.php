@@ -33,7 +33,14 @@
           header('Location: user.php');
         }
       }
+      //Dodawanie kategorii
+      $nazwa_kategorii = "";
+      if (isset($_POST['dodaj_kategorie'])) {
+        $nazwa_kategorii = $_POST['nazwa_kategorii'];
 
+        mysqli_query($lacz, 'INSERT INTO kategorie (nazwa_kategorii) values ("' . $nazwa_kategorii . '")');
+        header("Location: user.php");
+      }
 
       //Edycja danych osobowych
       $userID = $_SESSION['userID'];
@@ -124,11 +131,18 @@
                     </tbody>
                   </table>
                 </div>
-                <input type="submit" name="usun_dany_produkt" value="Usuń" class="purpleBttn">
+                <div class="usun_edytuj">
+                  <br>
+                  <input type="submit" name="edytuj_dany_produkt" value="Edytuj" class="purpleBttn">
+                  <input type="submit" name="usun_dany_produkt" value="Usuń" class="purpleBttn">
+                  <br>
+                </div>
+
               </form>
 
 
               <div class="centruj admin_panel">
+                <br>
                 <form action="dodawanieproduktu.php">
                   <input class="purpleBttn" type="submit" value="Dodaj produkt">
                 </form>
@@ -159,7 +173,7 @@
 
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
-                        <button name="save_edit_dane" type="submit" class="save_changes btn">Dodaj</button>
+                        <button name="dodaj_kategorie" type="submit" class="save_changes btn">Dodaj</button>
                       </div>
 
                     </form>

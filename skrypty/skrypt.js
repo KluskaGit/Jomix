@@ -3,7 +3,7 @@ $(document).ready(function funkcje() {
     window.open("wylogujsie.php", "_self");
   });
 
-  var timeOutNow = 900000;
+  var timeOutNow = 900000; //15min
   var timeOutTimer;
 
   $(window).on("mousemove", function () {

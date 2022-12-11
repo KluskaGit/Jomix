@@ -208,6 +208,10 @@ a {
   overflow: scroll;
 }
 
+.usun_edytuj {
+  float: left;
+}
+
 .rejestracjamain {
   display: flex;
   flex-direction: column;
