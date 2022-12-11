@@ -10,7 +10,7 @@
     <?php include("header.php"); ?>
 
     <div class="centruj">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" style="width: 65%;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true" style="width: 75%;">
         <div class=" carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -21,10 +21,10 @@
             <img src="zdjecia/slide1.jpg" class="d-block w-100">
           </div>
           <div class=" carousel-item">
-            <img src="zdjecia/slide2.jpg" class="d-block w-100" alt="...">
+            <img src="zdjecia/slide2.jpg" class="d-block w-100">
           </div>
           <div class="carousel-item">
-            <img src="zdjecia/slide3.jpg" class="d-block w-100" alt="...">
+            <img src="zdjecia/slide3.jpg" class="d-block w-100">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
