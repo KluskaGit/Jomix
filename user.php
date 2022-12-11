@@ -34,10 +34,23 @@
         }
       }
       //Edycja produktu
+
+
       $edit_id = "";
+      $blad_edycja = false;
       if (isset($_POST['edytuj_dany_produkt'])) {
         $edit_id = $_POST['zaznacz_produkt'];
-        header('Location: edycjaproduktu.php?edit=' . $edit_id[0] . '');
+
+        if ($edit_id != null) {
+
+          if (count($edit_id) == 1) {
+            header('Location: edycjaproduktu.php?edit=' . $edit_id[0] . '');
+          } else {
+            $blad_edycja = true;
+          }
+        } else {
+          header('Location: user.php');
+        }
       }
 
       //Dodawanie kategorii
@@ -142,6 +155,11 @@
                   <br>
                   <input type="submit" name="edytuj_dany_produkt" value="Edytuj" class="purpleBttn">
                   <input type="submit" name="usun_dany_produkt" value="Usuń" class="purpleBttn">
+                  <?php
+                  if ($blad_edycja == true) {
+                    echo '<span style="color: red;">Wybierz max 1 produkt do edycji</span>';
+                  }
+                  ?>
                   <br>
                 </div>
 
