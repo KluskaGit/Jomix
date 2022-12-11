@@ -187,6 +187,22 @@ a {
   flex-direction: column;
 }
 
+.admin_panel {
+  flex-direction: column;
+}
+
+.save_changes {
+  border: none;
+  border-radius: 5px;
+  background-color: #430b4e;
+  color: white;
+}
+
+.save_changes:hover {
+  color: white;
+  background-color: #621172;
+}
+
 .rejestracjamain {
   display: flex;
   flex-direction: column;

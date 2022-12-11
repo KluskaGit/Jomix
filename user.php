@@ -70,17 +70,52 @@
         <div class="col-8 user_prawy">
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show" id="list-admin" role="tabpanel" aria-labelledby="list-admin-list">
-
-              <div class="centruj">
+              <!-- Admin -->
+              <div class="centruj admin_panel">
                 <form action="dodawanieproduktu.php">
                   <input class="purpleBttn" type="submit" value="Dodaj produkt">
                 </form>
+
+                <button type="button" class="purpleBttn" data-bs-toggle="modal" data-bs-target="#admin_kat">
+                  Dodaj kategorie
+                </button>
               </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="admin_kat" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Dodaj kategorie</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="post">
+
+                      <div class="modal-body">
+                        <div class="modal_element mb-3  w-50">
+                          <label for="exampleFormControlInput1" class="form-label modal_tekst">Nazwa kategorii:</label>
+                          <input name="nazwa_kategorii" type="text" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                        <button name="save_edit_dane" type="submit" class="save_changes btn">Dodaj</button>
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+
 
             </div>
             <div class="tab-pane fade show active" id="list-kokpit" role="tabpanel" aria-labelledby="list-kokpit-list">
               <div class="kokpit">
-                <a>Tutaj, możesz zarządzać swoimi zamówieniami, zwrotami oraz ustawieniami konta.</a>
+                <a>Tutaj, możesz zarządzać swoimi zamówieniami oraz ustawieniami konta.</a>
                 <br>
                 <br>
                 <h3>Ostatnie Zamówienie</h3>
@@ -199,8 +234,8 @@
                       </div>
 
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button name="save_edit_dane" type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+                        <button name="save_edit_dane" type="submit" class="save_changes  btn">Zapisz</button>
                       </div>
 
                     </form>
