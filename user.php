@@ -20,6 +20,32 @@
 
       $imie = $user_array['imie'];
       $nazwisko = $user_array['nazwisko'];
+
+
+      $imie_dane = "";
+      $nazwisko_dane = "";
+      $eamil_dane = "";
+      $blad_email = false;
+      if (isset($_POST['save_edit_dane'])) {
+
+        $imie_dane = $_POST['imie'];
+        $nazwisko_dane = $_POST['nazwisko'];
+        $eamil_dane = $_POST['email'];
+
+        $czy_jest_taki_email = mysqli_query($lacz, "SELECT email from uzytkownicy");
+
+        while ($sprawdzanie_email = mysqli_fetch_array($czy_jest_taki_email)) {
+
+          if ($eamil_dane == $sprawdzanie_email['email']) {
+            $blad_email = true;
+          }
+        }
+
+        if ($blad_email == false) {
+          mysqli_query($lacz, 'UPDATE uzytkownicy set imie="' . $imie_dane . '", nazwisko="' . $nazwisko_dane . '", email="' . $eamil_dane . '" where userID=' . $_SESSION['userID'] . '');
+          header("Location: user.php");
+        }
+      }
       ?>
 
 
@@ -126,7 +152,7 @@
 
               <div class="d-flex">
                 <?php
-                echo '<h3>Eamil: ' . $user_array['email'] . '</h3>';
+                echo '<h3>Email: ' . $user_array['email'] . '</h3>';
                 ?>
               </div>
 
@@ -147,19 +173,38 @@
                       <h1 class="modal-title fs-5" id="exampleModalLabel">Zmień swoje dane</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+
                     <form method="post">
+
                       <div class="modal-body">
-                        <div class="w-50 mb-3">
-                          <label for="exampleFormControlInput1" class="form-label">Nazwa produktu</label>
-                          <input name="nazwa_produktu" type="text" class="form-control" id="exampleFormControlInput1" required>
+                        <div class="modal_element mb-3  w-50">
+                          <label for="exampleFormControlInput1" class="form-label modal_tekst">Imie:</label>
+                          <input name="imie" type="text" class="form-control" id="exampleFormControlInput1" required>
                         </div>
+
+                        <div class="modal_element mb-3  w-50">
+                          <label for="exampleFormControlInput1" class="form-label modal_tekst">Nazwisko:</label>
+                          <input name="nazwisko" type="text" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+
+                        <div class="modal_element mb-3  w-50">
+                          <label for="exampleFormControlInput1" class="form-label modal_tekst">Email:</label>
+                          <input name="email" type="text" class="form-control" id="exampleFormControlInput1" required>
+                        </div>
+                        <?php
+                        if ($blad_email == true) {
+                          echo '<span style="color: red;">Taki email już istnieje</span>';
+                        }
+                        ?>
                       </div>
 
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button name="save_edit_dane" type="submit" class="btn btn-primary">Save changes</button>
                       </div>
+
                     </form>
+
                   </div>
                 </div>
               </div>
