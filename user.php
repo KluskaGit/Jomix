@@ -33,6 +33,13 @@
           header('Location: user.php');
         }
       }
+      //Edycja produktu
+      $edit_id = "";
+      if (isset($_POST['edytuj_dany_produkt'])) {
+        $edit_id = $_POST['zaznacz_produkt'];
+        header('Location: edycjaproduktu.php?edit=' . $edit_id[0] . '');
+      }
+
       //Dodawanie kategorii
       $nazwa_kategorii = "";
       if (isset($_POST['dodaj_kategorie'])) {
