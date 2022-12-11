@@ -27,7 +27,7 @@
     $opis_produktu = "";
     $cena = "";
     $ilosc_produktu = "";
-    if (isset($_POST['edytowanie'])) {
+    if (isset($_POST['edytuj'])) {
         $kategoriaID = $_POST['kategoriaID'];
         $nazwa_produktu = $_POST['nazwa_produktu'];
         $opis_produktu = $_POST['opis_produktu'];
@@ -35,8 +35,8 @@
         $ilosc_produktu = $_POST['ilosc_produktu'];
 
         mysqli_query($lacz, 'UPDATE szczegoly_produktu set ilosc=' . $ilosc_produktu . ' where szczegoly_produktuID=' . $edit_id . '');
-        mysqli_query($lacz, 'UPDATE produkty set kategoriaID=' . $kategoriaID . ', nazwa_produktu=' . $nazwa_produktu . ', opis_produktu=' . $opis_produktu . ', cena=' . $cena . ' where produktID=' . $wszystkie_produkty_array['pID'] . '');
-        header('Location: user.php');
+        mysqli_query($lacz, 'UPDATE produkty set kategoriaID=' . $kategoriaID . ', nazwa_produktu="' . $nazwa_produktu . '", opis_produktu="' . $opis_produktu . '", cena=' . $cena . ' where produktID=' . $wszystkie_produkty_array['pID'] . '');
+        header("Location: user.php");
     }
     ?>
 
@@ -85,7 +85,7 @@
 
         <form action="user.php">
             <br>
-            <input type="submit" class="purpleBttn" value="Wyjdź" name="edytowanie">
+            <input type="submit" class="purpleBttn" value="Wyjdź">
         </form>
     </div>
 </body>
