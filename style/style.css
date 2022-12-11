@@ -27,6 +27,18 @@
   width: 100vw;
 }
 
+.szukajbttn {
+  border: 2px solid #621172;
+  border-radius: 5px;
+  background-color: white;
+  color: #621172;
+}
+
+.szukajbttn:hover {
+  background-color: #621172;
+  color: white;
+}
+
 .logowanieform {
   display: flex;
   align-items: center;
@@ -50,19 +62,6 @@
 
 .logowaniebutton {
   text-align: center;
-}
-
-.purpleBttn {
-  border-radius: 20px;
-  border: none;
-  background-color: #430b4e;
-  padding: 10px;
-  color: white;
-}
-
-.purpleBttn:hover {
-  background-color: #621172;
-  color: white;
 }
 
 body {
@@ -144,6 +143,19 @@ a {
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.purpleBttn {
+  border-radius: 20px;
+  border: none;
+  background-color: #430b4e;
+  padding: 10px;
+  color: white;
+}
+
+.purpleBttn:hover {
+  background-color: #621172;
+  color: white;
 }
 
 .user_tk {

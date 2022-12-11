@@ -24,3 +24,15 @@
   justify-content: space-between;
   width: 100vw;
 }
+
+.szukajbttn {
+  border: 2px solid #621172;
+  border-radius: 5px;
+  background-color: white;
+  color: #621172;
+}
+
+.szukajbttn:hover {
+  background-color: #621172;
+  color: white;
+}

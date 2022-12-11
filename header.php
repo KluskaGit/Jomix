@@ -18,8 +18,9 @@ session_start();
 
         <form action="produkty_all.php" class="d-flex" method="post" name="szukanie">
           <input class="form-control me-2" type="text" name="szukanie">
-          <button class="btn btn-outline-success" type="submit" name="szukajbutton">Szukaj</button>
+          <button class="szukajbttn" type="submit" name="szukajbutton">Szukaj</button>
         </form>
+
       </nav>
     </div>
 

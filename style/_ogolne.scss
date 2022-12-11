@@ -74,3 +74,16 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+.purpleBttn {
+  border-radius: 20px;
+  border: none;
+  background-color: #430b4e;
+  padding: 10px;
+  color: white;
+}
+
+.purpleBttn:hover {
+  background-color: #621172;
+  color: white;
+}
