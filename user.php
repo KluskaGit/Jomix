@@ -13,7 +13,7 @@
 
       <?php
       //wszystkie produkty
-      $wszystkie_produkty = mysqli_query($lacz, 'SELECT szczegoly_produktu.szczegoly_produktuID as sz_ID, szczegoly_produktu.produktID as pID, nazwa_kategorii, nazwa_produktu, nazwa_rozmiaru, ilosc from ((szczegoly_produktu 
+      $wszystkie_produkty = mysqli_query($lacz, 'SELECT cena, szczegoly_produktu.szczegoly_produktuID as sz_ID, szczegoly_produktu.produktID as pID, nazwa_kategorii, nazwa_produktu, nazwa_rozmiaru, ilosc from ((szczegoly_produktu 
       INNER JOIN rozmiary on szczegoly_produktu.rozmiarID=rozmiary.rozmiarID)
       INNER JOIN produkty on szczegoly_produktu.produktID=produkty.produktID) 
       INNER JOIN kategorie on produkty.kategoriaID=kategorie.kategoriaID order by nazwa_kategorii, szczegoly_produktu.produktID');
@@ -132,6 +132,7 @@
                         <td class="text-center">Nazwa</td>
                         <td class="text-center">Rozmiar</td>
                         <td class="text-center">Ilość</td>
+                        <td class="text-center">Cena</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -145,6 +146,7 @@
                           '<td class="td_item">' . $wszystkie_produkty_array['nazwa_produktu'] . '</td>' .
                           '<td class="td_item">' . $wszystkie_produkty_array['nazwa_rozmiaru'] . '</td>' .
                           '<td class="td_item">' . $wszystkie_produkty_array['ilosc'] . '</td>' .
+                          '<td class="td_item">' . $wszystkie_produkty_array['cena'] . '</td>' .
                           '</tr>';
                       }
                       ?>
