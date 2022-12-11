@@ -43,10 +43,36 @@ include 'head.php';
     <div class="col">
       <h4>Konto</h4>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="user.php" class="nav-link p-0 text-muted">Twoje konto</a></li>
+        <li class="nav-item mb-2"><a href="
+        <?php
+        if (isset($_SESSION['userID'])) {
+          echo 'user.php';
+        } else {
+          echo 'logowanie.php';
+        }
+        ?>
+        
+        " class="nav-link p-0 text-muted">Twoje konto</a></li>
         <li class="nav-item mb-2"><a href="rejestracja.php" class="nav-link p-0 text-muted">Zarejestruj się</a></li>
-        <li class="nav-item mb-2"><a href="user.php" class="nav-link p-0 text-muted">Zamówienia</a></li>
-        <li class="nav-item mb-2"><a href="Koszyk.php" class="nav-link p-0 text-muted">Koszyk</a></li>
+        <li class="nav-item mb-2"><a href="
+        
+        <?php
+        if (isset($_SESSION['userID'])) {
+          echo 'user.php';
+        } else {
+          echo 'logowanie.php';
+        }
+        ?>
+        " class="nav-link p-0 text-muted">Zamówienia</a></li>
+        <li class="nav-item mb-2"><a href="
+        <?php
+        if (isset($_SESSION['userID'])) {
+          echo 'Koszyk.php';
+        } else {
+          echo 'logowanie.php';
+        }
+        ?>
+        " class="nav-link p-0 text-muted">Koszyk</a></li>
       </ul>
     </div>
 
@@ -68,8 +94,8 @@ include 'head.php';
 
     <div class="flex-row media">
       <ul class="nav flex-row ">
-        <li class="nav-item mb-2"><a href="https://www.instagram.com/jomix_pl/" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png" width=28px height=28px></a></li>
-        <li class="nav-item mb-2"><a href="https://www.facebook.com/Jomixx" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px height=28px></a></li>
+        <li class="nav-item mb-2"><a href="https://www.instagram.com/jomix_pl/" target="_blank" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png" width=28px height=28px></a></li>
+        <li class="nav-item mb-2"><a href="https://www.facebook.com/Jomixx" target="_blank" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px height=28px></a></li>
         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/telephone.png" width=28px height=28px></a></li>
       </ul>
     </div>
