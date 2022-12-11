@@ -36,6 +36,7 @@
 
         mysqli_query($lacz, 'UPDATE szczegoly_produktu set ilosc=' . $ilosc_produktu . ' where szczegoly_produktuID=' . $edit_id . '');
         mysqli_query($lacz, 'UPDATE produkty set kategoriaID=' . $kategoriaID . ', nazwa_produktu=' . $nazwa_produktu . ', opis_produktu=' . $opis_produktu . ', cena=' . $cena . ' where produktuID=' . $wszystkie_produkty_array['pID'] . '');
+        header('location:user.php')
     }
     ?>
 
