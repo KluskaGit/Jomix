@@ -115,7 +115,6 @@
             <a class="list-group-item list-group-item-action" id="list-zamowienia-list" data-bs-toggle="list" href="#list-zamowienia" role="tab" aria-controls="list-zamowienia">Zamówienia</a>
             <a class="list-group-item list-group-item-action active" id="list-kokpit-list" data-bs-toggle="list" href="#list-kokpit" role="tab" aria-controls="list-kokpit">Kokpit</a>
             <a class="list-group-item list-group-item-action" id="list-dane-list" data-bs-toggle="list" href="#list-dane" role="tab" aria-controls="list-dane">Twoje Dane</a>
-            <a class="list-group-item list-group-item-action" id="list-adresy-list" data-bs-toggle="list" href="#list-adresy" role="tab" aria-controls="list-adresy">Adresy</a>
             <a class="list-group-item list-group-item-action wylogujButton" id="list-wyloguj-list" data-bs-toggle="list" href="#" role="tab" aria-controls="list-wyloguj">Wyloguj się</a>
           </div>
         </div>
@@ -218,20 +217,93 @@
 
             <div class="tab-pane fade" id="list-zamowienia" role="tabpanel" aria-labelledby="list-zamowienia-list">
 
-              <div class="zamowienia_do_realizacji">
-                <p>
-                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Link with href
-                  </a>
-                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Button with data-bs-target
-                  </button>
-                </p>
-                <div class="collapse" id="collapseExample">
-                  <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                  </div>
-                </div>
+              <div class="lista_produktow">
+                <?php
+                $zamowienia_do_realizacji = mysqli_query($lacz, 'SELECT data_zamowienia, kwota_zamowienia, zamowienieID, nazwa_dostawcy, cena_dostawy, email, nr_tel, kraj, kod_pocztowy, poczta, adres1, adres2  from zamowienia 
+                INNER JOIN dostawcy on zamowienia.dostawaID=dostawcy.dostawcyID  where status_zamowienia=0');
+                $zamowienia_do_realizacji2 = mysqli_query($lacz, 'SELECT * from zamowienia where status_zamowienia=0');
+                $zamowienia_do_realizacji_array2 = mysqli_fetch_array($zamowienia_do_realizacji2);
+                if ($zamowienia_do_realizacji_array2 != null) {
+                  echo '
+                   <table class="table">
+                          <thead class="table-dark">
+                            <tr>
+                              <td class="text-center">ID</td>
+                              <td class="text-center">Nazwa</td>
+                              <td class="text-center">Rozmiar</td>
+                              <td class="text-center">Ilość</td>
+                              <td class="text-center">Cena</td>
+                              <td class="text-center">Data</td>
+                              <td class="text-center">Kwota</td>
+                              <td class="text-center">Dostawa</td>
+                              <td class="text-center">Cena Dos.</td>
+                              <td class="text-center">Email</td>
+                              <td class="text-center">Tel</td>
+                              <td class="text-center">Kraj</td>
+                              <td class="text-center">Kod pocztowy</td>
+
+                            </tr>
+                          </thead>
+                          <tbody>';
+
+                  while ($zamowienia_do_realizacji_array = mysqli_fetch_array($zamowienia_do_realizacji)) {
+                    echo '  
+                       
+                      <tr class="text-center">' .
+                      '<td class="td_item"><input type="checkbox" name="zamowienia_do_rel[]"></td>' .
+                      '<td class="td_item"></td>' .
+                      '<td class="td_item"></td>' .
+                      '<td class="td_item"></td>' .
+                      '<td class="td_item"></td>' .
+                      '<td class="td_item">' . $zamowienia_do_realizacji_array['data_zamowienia'] . '</td>' .
+                      '<td class="td_item">' . $zamowienia_do_realizacji_array['kwota_zamowienia'] . '</td>' .
+                      '<td class="td_item">' . $zamowienia_do_realizacji_array['nazwa_dostawcy'] . '</td>' .
+                      '<td class="td_item">' . $zamowienia_do_realizacji_array['cena_dostawy'] . '</td>' .
+                      '</tr>';
+                    $szczegoly_zamowienia_rel = mysqli_query($lacz, 'SELECT nazwa_dostawcy, cena_dostawy,nazwa_rozmiaru, nazwa_produktu, szczegoly_zamowienia.ilosc as sz_ilosc, szczegoly_zamowienia.cena as sz_cena 
+                  from ((((zamowienia INNER JOIN szczegoly_zamowienia on zamowienia.zamowienieID=szczegoly_zamowienia.zamowienieID) 
+                  INNER JOIN  szczegoly_produktu on szczegoly_produktu.szczegoly_produktuID=szczegoly_zamowienia.szczegoly_produktuID) 
+                  INNER JOIN produkty on szczegoly_produktu.produktID=produkty.produktID)
+                  INNER JOIN rozmiary on rozmiary.rozmiarID=szczegoly_produktu.rozmiarID)
+                  INNER JOIN dostawcy on zamowienia.dostawaID=dostawcy.dostawcyID
+                  where szczegoly_zamowienia.zamowienieID=' . $zamowienia_do_realizacji_array['zamowienieID'] . '');
+
+                    while ($szczegoly_zamowienia_rel_array = mysqli_fetch_array($szczegoly_zamowienia_rel)) {
+                      echo '<tr class="text-center">' .
+                        '<td class="td_item"></td>' .
+                        '<td class="td_item">' . $szczegoly_zamowienia_rel_array['nazwa_produktu'] . '</td>' .
+                        '<td class="td_item">' . $szczegoly_zamowienia_rel_array['nazwa_rozmiaru'] . '</td>' .
+                        '<td class="td_item">' . $szczegoly_zamowienia_rel_array['sz_ilosc'] . '</td>' .
+                        '<td class="td_item">' . $szczegoly_zamowienia_rel_array['sz_cena'] . '</td>' .
+                        '<td class="td_item"></td>' .
+                        '<td class="td_item"></td>' .
+                        '<td class="td_item"></td>' .
+                        '<td class="td_item"></td>' .
+                        '</tr>';
+                    }
+
+                    echo '<tr>
+                    <td >-</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>';
+                  }
+                  echo '
+                     </tbody>
+                  </table>';
+                } else {
+                  echo '<h3>Brak zamowień do realizacji</h3>';
+                }
+
+
+                ?>
+
               </div>
 
             </div>
@@ -370,7 +442,7 @@
 
 
             </div>
-            <div class="tab-pane fade" id="list-adresy" role="tabpanel" aria-labelledby="list-adresy-list">Adresy</div>
+
           </div>
         </div>
       </div>
