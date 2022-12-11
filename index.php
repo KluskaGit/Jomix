@@ -21,14 +21,14 @@
           <img src="zdjecia/slide3.jpg" class="d-block w-100" />
         </div>
       </div>
-      <button class="carousel-control-prev" data-mdb-target="#carouselExampleInterval" type="button" data-mdb-slide="prev">
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Poprzedni</span>
-      </button>
-      <button class="carousel-control-next" data-mdb-target="#carouselExampleInterval" type="button" data-mdb-slide="next">
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Następny</span>
-      </button>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
     <div class="container-lg">
