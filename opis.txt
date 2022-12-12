@@ -1,0 +1,1 @@
+transakcje przy dodawaniu produktow do koszyka oraz przy platnosci

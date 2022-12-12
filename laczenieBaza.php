@@ -1,10 +1,10 @@
 <div class="lacz">
     <?php
 
-    $dbhost = 'mysql.ct8.pl';
+    $dbhost = 'localhost';
     $dbname = 'm28441_jomix';
-    $dbuser = 'm28441_jomixA';
-    $dbpass = 'ZAQ!2wsx';
+    $dbuser = 'root';
+    $dbpass = '';
 
     $lacz = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 

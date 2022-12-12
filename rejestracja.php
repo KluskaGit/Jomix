@@ -66,8 +66,8 @@
                 <label for="inputEmail" class="col-form-label">EMAIL</label>
                 <input type="email" name="email" id="inputEmail" class="form-control" required>
 
-                <label for="inputHaslo" class="col-form-label">HASŁO</label>
-                <input type="password" name="haslo" id="inputHaslo" class="form-control" required>
+                <label for="inputHaslo" class="col-form-label">HASŁO (Min. 8 znaków, 1 cyfra, mała i duża litera)</label>
+                <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" name="haslo" id="inputHaslo" class="form-control" required>
             </div>
             <?php
             if ($blad_email) {
