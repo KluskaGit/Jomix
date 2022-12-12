@@ -138,8 +138,8 @@ ADD CONSTRAINT FOREIGN KEY (platnoscID) REFERENCES platnosc (platnoscID);
 
 
 
-DROP TABLE IF EXISTS Dostawcy;
-CREATE TABLE Dostawcy
+DROP TABLE IF EXISTS dostawcy;
+CREATE TABLE dostawcy
 (
     dostawcyID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nazwa_dostawcy varchar(55) NOT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE Dostawcy
 );
 
 ALTER TABLE zamowienia
-ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES Dostawcy (dostawcyID);
+ADD CONSTRAINT FOREIGN KEY (dostawaID) REFERENCES dostawcy (dostawcyID);
 
 
 INSERT INTO uzytkownicy (imie, nazwisko, login, haslo, admin, email)
@@ -198,7 +198,7 @@ INSERT INTO szczegoly_produktu (produktID, rozmiarID, ilosc)
         (14,1,10),(14,2,10),(14,3,10),(14,4,10),
         (15,1,10),(15,2,10),(15,3,10),(15,4,10);
 
-INSERT INTO Dostawcy (nazwa_dostawcy, cena_dostawy)
+INSERT INTO dostawcy (nazwa_dostawcy, cena_dostawy)
     values ("Kurier DHL",15.25),("Kurier DPD",15.11), ("Poczta Polska",12.40), ("Paczkomat InPost",10.99);
 
 INSERT INTO platnosc (metoda_platnosci)
