@@ -61,7 +61,7 @@
           $min = $_POST['cenamin'];
           $max = $_POST['cenamax'];
           if ($min != "") {
-            $od = "and cena > $min";
+            $od = "where cena > $min";
           }
           if ($max != "") {
             $od = "and cena < $max";
@@ -79,7 +79,7 @@
         }
         $produkt = mysqli_query(
           $lacz,
-          "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii, promocja from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID $warunek $order_by $sortuj"
+          "SELECT produktID,nazwa_produktu, cena, img_url, nazwa_kategorii, promocja from produkty inner join kategorie on produkty.kategoriaID = kategorie.kategoriaID $warunek $od $do $order_by $sortuj"
         );
 
         while ($row = @mysqli_fetch_array($produkt)) {
