@@ -252,4 +252,9 @@ a {
 
 .do_platnosci {
   text-align: right;
+}
+
+.realizacja_zam {
+  height: 100vh;
+  overflow: scroll;
 }/*# sourceMappingURL=style.css.map */

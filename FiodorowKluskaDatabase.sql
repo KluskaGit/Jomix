@@ -13,13 +13,7 @@ CREATE TABLE uzytkownicy
     login varchar(55),
     haslo varchar(256),
     admin tinyint NOT NULL DEFAULT 0,
-    email varchar(55),
-    nr_tel varchar(9),
-    kraj varchar(55),
-    kod_pocztowy varchar(6),
-    poczta varchar(55),
-    adres1 varchar(55),
-    adres2 varchar(55)
+    email varchar(55)
     
 );
 

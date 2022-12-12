@@ -3,6 +3,10 @@ $(document).ready(function funkcje() {
     window.open("wylogujsie.php", "_self");
   });
 
+  $(".zamowienia_bttn").on("click", function () {
+    window.open("realizacja_zam.php", "_self");
+  });
+
   var timeOutNow = 900000; //15min
   var timeOutTimer;
 
