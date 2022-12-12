@@ -96,7 +96,6 @@ include 'head.php';
       <ul class="nav flex-row ">
         <li class="nav-item mb-2"><a href="https://www.instagram.com/jomix_pl/" target="_blank" class="nav-link p-0 text-muted"><img src="zdjecia/instagram.png" width=28px height=28px></a></li>
         <li class="nav-item mb-2"><a href="https://www.facebook.com/Jomixx" target="_blank" class="nav-link p-0 text-muted"><img src="zdjecia/facebook.png" width=28px height=28px></a></li>
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="zdjecia/telephone.png" width=28px height=28px></a></li>
       </ul>
     </div>
 

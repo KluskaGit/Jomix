@@ -21,13 +21,14 @@
         </select>
         <br>
         <form method="post">
-          <div class="input-group" style="width: 20%;">
+          <div class="input-group d-flex" style="width: 20%;">
             <span class="input-group-text" id="">Cena od</span>
             <input min="1" type="number" value="" name="cenamin" class="form-control">
             <span class="input-group-text" id="">do</span>
             <input min="1" type="number" value="" name="cenamax" class="form-control">
           </div>
-          <input type="submit" name="filtruj" value="Filtruj" class="btn btn-primary">
+          <br>
+          <input type="submit" name="filtruj" value="Filtruj" class="purpleBttn">
         </form>
       </form>
 
@@ -44,7 +45,7 @@
             echo $x['nazwa_kategorii'];
           } ?></h1>
     </div>
-
+    <br>
     <div class="container-lg">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 col produktybox">
         <?php

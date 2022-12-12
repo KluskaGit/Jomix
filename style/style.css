@@ -232,6 +232,10 @@ a {
   height: auto;
 }
 
+.filtracja {
+  flex-direction: row;
+}
+
 .zdjecieproduktu {
   border: 2px solid black;
   border-radius: 10px;
